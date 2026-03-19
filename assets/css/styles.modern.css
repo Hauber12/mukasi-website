@@ -61,8 +61,8 @@
 
 /* ── Reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;width:100%;color-scheme:light}
-body{font-family:var(--font-body);font-size:1.0625rem;line-height:1.7;color:var(--color-text);background:var(--color-bg);min-height:100vh;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;width:100%;color-scheme:only light}
+body{font-family:var(--font-body);font-size:1.0625rem;line-height:1.7;color:var(--color-text);background:var(--color-bg) !important;min-height:100vh;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--color-primary);text-decoration:none;transition:color .25s var(--ease-out)}
 a:hover{color:var(--color-primary-dark)}
@@ -646,4 +646,14 @@ select.input{cursor:pointer}
   .flyer-event:nth-child(even) .flyer-event-body{padding:var(--space-md) 0 0;order:0;text-align:left}
   .flyer-event-img-inner,
   .flyer-event:nth-child(even) .flyer-event-img-inner{float:none;max-width:260px}
+}
+
+/* ── Force Light Mode on Dark-Mode devices ── */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #fffbf7 !important;
+    color: #1a1615 !important;
+    color-scheme: only light !important;
+  }
+  img, video, picture { filter: none !important; }
 }
