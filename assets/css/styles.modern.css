@@ -498,6 +498,11 @@ select.input{cursor:pointer}
 .error-message{color:var(--color-text-light);margin-bottom:var(--space-lg)}
 
 .page{padding:var(--space-3xl) 0}
+
+/* ── Decorative Watermark ── */
+main{position:relative;overflow:hidden}
+main::after{content:'';position:fixed;top:50%;right:-5vw;transform:translateY(-50%);width:clamp(300px,40vw,550px);height:auto;aspect-ratio:207/480;background:url('../img/notenschluessel.png') no-repeat center/contain;opacity:.04;pointer-events:none;z-index:0}
+.hero ~ *{position:relative;z-index:1}
 .kicker{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--color-primary);margin-bottom:var(--space-xs);display:flex;align-items:center;gap:.6rem}
 .kicker::before{content:'';width:24px;height:2.5px;background:var(--color-primary);border-radius:2px;flex-shrink:0}
 
