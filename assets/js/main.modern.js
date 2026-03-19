@@ -455,71 +455,90 @@
     const eventsData = window.MUKASI_TERMINE || [];
     if (eventsData.length === 0) return;
 
-    // Render all events as cards (same style as homepage "Nächste Termine")
+    // Render all events as cards, split into upcoming and past
     const renderEvents = () => {
       eventList.innerHTML = '';
       const query = filterQ ? filterQ.value.toLowerCase() : '';
       const year = filterYear ? filterYear.value : 'all';
       const type = filterType ? filterType.value : 'all';
+      const now = new Date();
       
+      // Build filtered list with date objects
+      const filtered = eventsData.map(event => ({
+        ...event,
+        dateObj: new Date(event.date),
+        eventYear: event.year || new Date(event.date).getFullYear().toString(),
+        eventType: event.type || '',
+        titleText: event.title || '',
+        locationText: event.location || '',
+        notesText: event.notes || ''
+      })).filter(event => {
+        const matchesQuery = !query || 
+          event.titleText.toLowerCase().includes(query) || 
+          event.locationText.toLowerCase().includes(query) || 
+          event.notesText.toLowerCase().includes(query);
+        const matchesYear = year === 'all' || event.eventYear === year;
+        const matchesType = type === 'all' || event.eventType === type;
+        return matchesQuery && matchesYear && matchesType;
+      });
+
+      // Split into upcoming and past
+      const upcoming = filtered.filter(e => e.dateObj >= now).sort((a, b) => a.dateObj - b.dateObj);
+      const past = filtered.filter(e => e.dateObj < now).sort((a, b) => b.dateObj - a.dateObj);
+
       let visibleCount = 0;
 
-      eventsData.forEach((event, index) => {
-        const dateObj = new Date(event.date);
-        const eventYear = event.year || dateObj.getFullYear().toString();
-        const eventType = event.type || '';
-        const title = event.title || '';
-        const location = event.location || '';
-        const notes = event.notes || '';
-
-        // Filter checks
-        const matchesQuery = !query || 
-          title.toLowerCase().includes(query) || 
-          location.toLowerCase().includes(query) || 
-          notes.toLowerCase().includes(query);
-        const matchesYear = year === 'all' || eventYear === year;
-        const matchesType = type === 'all' || eventType === type;
-
-        if (!matchesQuery || !matchesYear || !matchesType) return;
-
+      const createCard = (event, index, isPast) => {
         visibleCount++;
-
         const card = document.createElement('article');
-        card.className = 'event-card';
+        card.className = 'event-card' + (isPast ? ' event-card--past' : '');
         card.dataset.event = '';
-        card.dataset.title = title;
+        card.dataset.title = event.titleText;
         card.dataset.date = event.date;
-        card.dataset.location = location;
-        card.dataset.type = eventType;
-        card.dataset.notes = notes;
-        card.dataset.year = eventYear;
+        card.dataset.location = event.locationText;
+        card.dataset.type = event.eventType;
+        card.dataset.notes = event.notesText;
+        card.dataset.year = event.eventYear;
         card.style.animationDelay = `${Math.min(index, 8) * 0.05}s`;
 
-        const formattedDate = formatEventDate(dateObj);
-        const formattedTime = formatEventTime(dateObj);
+        const formattedDate = formatEventDate(event.dateObj);
+        const formattedTime = formatEventTime(event.dateObj);
         const showTime = formattedTime !== '00:00';
-
-        const typeBadge = eventType ? `<span class="event-type-badge event-type-${eventType}">${getEventTypeLabel(eventType)}</span>` : '';
+        const typeBadge = event.eventType ? `<span class="event-type-badge event-type-${event.eventType}">${getEventTypeLabel(event.eventType)}</span>` : '';
 
         card.innerHTML = `
           <div class="event-date">${formattedDate}</div>
-          <h3 class="event-title">${escapeHtml(title)}</h3>
+          <h3 class="event-title">${escapeHtml(event.titleText)}</h3>
           <div class="event-meta">
             ${showTime ? `<span>⏰ ${formattedTime} Uhr</span>` : ''}
-            ${location ? `<span>📍 ${escapeHtml(location)}</span>` : ''}
+            ${event.locationText ? `<span>📍 ${escapeHtml(event.locationText)}</span>` : ''}
           </div>
           ${typeBadge}
-          ${notes ? `<p class="muted small" style="margin-top: 8px;">${escapeHtml(notes)}</p>` : ''}
+          ${event.notesText ? `<p class="muted small" style="margin-top: 8px;">${escapeHtml(event.notesText)}</p>` : ''}
         `;
 
-        // Click on card opens dialog
         card.style.cursor = 'pointer';
-        card.addEventListener('click', () => {
-          openEventDialog(card);
-        });
+        card.addEventListener('click', () => { openEventDialog(card); });
+        return card;
+      };
 
-        eventList.appendChild(card);
-      });
+      // Render upcoming
+      if (upcoming.length > 0) {
+        const upLabel = document.createElement('div');
+        upLabel.className = 'event-section-label';
+        upLabel.innerHTML = '<span>Kommende Termine</span>';
+        eventList.appendChild(upLabel);
+        upcoming.forEach((event, i) => eventList.appendChild(createCard(event, i, false)));
+      }
+
+      // Render past
+      if (past.length > 0) {
+        const pastLabel = document.createElement('div');
+        pastLabel.className = 'event-section-label event-section-label--past';
+        pastLabel.innerHTML = '<span>Vergangene Termine</span>';
+        eventList.appendChild(pastLabel);
+        past.forEach((event, i) => eventList.appendChild(createCard(event, i, true)));
+      }
 
       if (resultsCount) {
         resultsCount.textContent = visibleCount;
