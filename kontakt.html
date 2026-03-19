@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="only light" name="color-scheme"/>
+  <meta name="supported-color-schemes" content="light">
 <meta content="width=device-width, initial-scale=1" name="viewport">
   <!-- Preload critical assets -->
   <link rel="preload" href="assets/css/styles.modern.css" as="style">
@@ -116,7 +117,9 @@
 <h2>Kontaktformular</h2>
 </div>
 <p aria-live="polite" class="muted small" data-form-status=""></p>
-<form class="card form" data-contact-form="" novalidate="" style="max-width:none;">
+<form class="card form" id="kontakt-form" action="https://formspree.io/f/maqpvdlp" method="POST" style="max-width:none;">
+<input type="hidden" name="_subject" value="Neue Nachricht über mukasi.de"/>
+<input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
 <label class="field">
 <span class="field-label">Name *</span>
 <input autocomplete="name" class="input" minlength="2" name="name" required="" type="text"/>
@@ -216,5 +219,59 @@
   </footer>
 <script src="assets/data/termine.v26.js"></script>
 <script defer="" src="assets/js/main.modern.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('kontakt-form');
+  var status = document.querySelector('[data-form-status]');
+  if (!form || !status) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Simple validation
+    var name = form.querySelector('[name="name"]');
+    var email = form.querySelector('[name="email"]');
+    var message = form.querySelector('[name="message"]');
+    var privacy = form.querySelector('[name="privacy"]');
+
+    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+      status.textContent = 'Bitte fülle alle Pflichtfelder aus.';
+      status.style.color = '#b71c1c';
+      return;
+    }
+    if (!privacy.checked) {
+      status.textContent = 'Bitte stimme den Datenschutzhinweisen zu.';
+      status.style.color = '#b71c1c';
+      return;
+    }
+
+    var btn = form.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet…';
+    status.textContent = '';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res) {
+      if (res.ok) {
+        status.textContent = 'Vielen Dank! Deine Nachricht wurde gesendet.';
+        status.style.color = '#2e7d32';
+        form.reset();
+      } else {
+        status.textContent = 'Fehler beim Senden. Bitte versuche es erneut oder schreib direkt an info@mukasi.de';
+        status.style.color = '#b71c1c';
+      }
+    }).catch(function() {
+      status.textContent = 'Netzwerkfehler. Bitte versuche es später erneut.';
+      status.style.color = '#b71c1c';
+    }).finally(function() {
+      btn.disabled = false;
+      btn.textContent = 'Absenden';
+    });
+  });
+});
+</script>
 </body>
 </html>
