@@ -62,7 +62,7 @@
 /* ── Reset ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;width:100%;color-scheme:only light}
-body{font-family:var(--font-body);font-size:1.0625rem;line-height:1.7;color:var(--color-text);background:var(--color-bg) !important;min-height:100vh;overflow-x:hidden}
+body{font-family:var(--font-body);font-size:1.0625rem;line-height:1.7;color:var(--color-text);background:var(--color-bg);min-height:100vh;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--color-primary);text-decoration:none;transition:color .25s var(--ease-out)}
 a:hover{color:var(--color-primary-dark)}
@@ -186,7 +186,7 @@ p{margin-bottom:var(--space-sm)} p:last-child{margin-bottom:0}
    ═══════════════════════════════════════ */
 .hero{position:relative;min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:var(--space-3xl) 0;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,var(--color-cream) 0%,var(--color-bg-warm) 30%,rgba(139,26,26,.07) 100%);z-index:-2}
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.22;z-index:-1;filter:sepia(.15) saturate(1.1);pointer-events:none}
+.hero-photo{position:absolute;inset:0;background-image:url('../img/festumzug.jpg');background-size:cover;background-position:center 30%;opacity:.22;z-index:-1;filter:sepia(.15) saturate(1.1)}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:var(--space-2xl);align-items:start;width:100%}
 @media(min-width:1024px){.hero-grid{grid-template-columns:1.1fr .9fr}}
 
@@ -498,6 +498,11 @@ select.input{cursor:pointer}
 .error-message{color:var(--color-text-light);margin-bottom:var(--space-lg)}
 
 .page{padding:var(--space-3xl) 0}
+
+/* ── Decorative Watermark ── */
+main{position:relative;overflow:hidden}
+main::after{content:'';position:fixed;top:50%;right:-5vw;transform:translateY(-50%);width:clamp(300px,40vw,550px);height:auto;aspect-ratio:207/480;background:url('../img/notenschluessel.png') no-repeat center/contain;opacity:.04;pointer-events:none;z-index:0}
+.hero ~ *{position:relative;z-index:1}
 .kicker{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--color-primary);margin-bottom:var(--space-xs);display:flex;align-items:center;gap:.6rem}
 .kicker::before{content:'';width:24px;height:2.5px;background:var(--color-primary);border-radius:2px;flex-shrink:0}
 
@@ -648,27 +653,3 @@ select.input{cursor:pointer}
   .flyer-event:nth-child(even) .flyer-event-img-inner{float:none;max-width:260px}
 }
 
-/* ── Force Light Mode on Dark-Mode devices ── */
-@media (prefers-color-scheme: dark) {
-  html, body {
-    background-color: #fffbf7 !important;
-    color: #1a1615 !important;
-    color-scheme: only light !important;
-  }
-  .hero, .hero-bg, .hero-photo, .section, .card, .site-header, .site-footer,
-  main, header, footer, div, section, nav {
-    background-color: unset;
-    color: inherit;
-  }
-  .hero-bg {
-    background: linear-gradient(160deg,#fdf8f0 0%,#f3ece3 30%,rgba(139,26,26,.07) 100%) !important;
-  }
-  img, video, picture { filter: none !important; }
-  img.hero-photo {
-    opacity: .22 !important;
-    filter: sepia(.15) saturate(1.1) !important;
-  }
-  *, *::before, *::after {
-    color-scheme: only light !important;
-  }
-}
