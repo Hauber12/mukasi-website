@@ -655,5 +655,20 @@ select.input{cursor:pointer}
     color: #1a1615 !important;
     color-scheme: only light !important;
   }
+  .hero, .hero-bg, .hero-photo, .section, .card, .site-header, .site-footer,
+  main, header, footer, div, section, nav {
+    background-color: unset;
+    color: inherit;
+  }
+  .hero-bg {
+    background: linear-gradient(160deg,#fdf8f0 0%,#f3ece3 30%,rgba(139,26,26,.07) 100%) !important;
+  }
+  .hero-photo {
+    opacity: .22 !important;
+    filter: sepia(.15) saturate(1.1) !important;
+  }
   img, video, picture { filter: none !important; }
+  *, *::before, *::after {
+    color-scheme: only light !important;
+  }
 }
