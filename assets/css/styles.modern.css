@@ -431,6 +431,16 @@ select.input{cursor:pointer}
 .event-card:hover{box-shadow:var(--shadow-card-hover),0 0 0 1px rgba(183,28,28,.1);transform:translateY(-3px) translateX(2px)}
 .event-card:hover::before{opacity:1}
 
+/* Event section labels */
+.event-section-label{display:flex;align-items:center;gap:var(--space-md);margin:var(--space-md) 0 var(--space-md);color:var(--color-primary);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+.event-section-label::before,.event-section-label::after{content:'';flex:1;height:2px;background:var(--color-primary);opacity:.2;border-radius:2px}
+.event-section-label--past{color:var(--color-text-muted);margin-top:var(--space-2xl)}
+.event-section-label--past::before,.event-section-label--past::after{background:var(--color-border)}
+
+/* Past event cards */
+.event-card--past{opacity:.55;border-left-color:var(--color-border)}
+.event-card--past:hover{opacity:.75}
+
 .event-date{font-size:.82rem;font-weight:700;color:var(--color-primary);margin-bottom:var(--space-xs);text-transform:uppercase;letter-spacing:.04em;position:relative}
 .event-title{font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin-bottom:var(--space-xs);color:var(--color-text);position:relative}
 .event-meta{font-size:.88rem;color:var(--color-text-light);display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center;position:relative}
