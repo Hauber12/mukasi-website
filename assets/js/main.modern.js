@@ -251,9 +251,9 @@
           <div class="event-meta">
             <span>⏰ ${formattedTime}</span>
             ${event.location ? `<span>📍 ${escapeHtml(event.location)}</span>` : ''}
+            ${event.notes ? `<span style="font-size:.75rem;font-weight:600;background:rgba(139,26,26,.08);color:var(--color-primary);padding:2px 8px;border-radius:999px;">${escapeHtml(event.notes)}</span>` : ''}
           </div>
           ${typeBadge}
-          ${event.notes ? `<p class="muted small" style="margin-top: 12px;">${escapeHtml(event.notes)}</p>` : ''}
         `;
 
         container.appendChild(card);
@@ -512,9 +512,9 @@
           <div class="event-meta">
             ${showTime ? `<span>⏰ ${formattedTime} Uhr</span>` : ''}
             ${event.locationText ? `<span>📍 ${escapeHtml(event.locationText)}</span>` : ''}
+            ${event.notesText ? `<span style="font-size:.75rem;font-weight:600;background:rgba(139,26,26,.08);color:var(--color-primary);padding:2px 8px;border-radius:999px;">${escapeHtml(event.notesText)}</span>` : ''}
           </div>
           ${typeBadge}
-          ${event.notesText ? `<p class="muted small" style="margin-top: 8px;">${escapeHtml(event.notesText)}</p>` : ''}
         `;
 
         card.style.cursor = 'pointer';
