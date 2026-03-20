@@ -82,7 +82,35 @@ body { font-family: var(--font-body); background: var(--bg); color: var(--text);
 </style>
 </head>
 <body>
-<div class="app">
+<div id="loginScreen" style="display:flex; align-items:center; justify-content:center; min-height:100vh; padding:20px;">
+<div style="background:white; border-radius:12px; padding:36px; max-width:380px; width:100%; box-shadow:0 8px 40px rgba(0,0,0,.1); text-align:center;">
+<div style="font-family:'Playfair Display',serif; font-size:1.6rem; color:#8b1a1a; margin-bottom:4px;">MUKASI</div>
+<div style="font-size:.85rem; color:#8a8380; margin-bottom:24px;">Termine Admin-Bereich</div>
+<input type="password" id="pwInput" placeholder="Passwort eingeben" onkeydown="if(event.key==='Enter')checkPw()" style="font-family:'Source Sans 3',sans-serif; font-size:1rem; padding:10px 16px; border:1px solid #e0d8ce; border-radius:8px; width:100%; margin-bottom:12px; background:#fffbf7;"/>
+<div id="pwError" style="color:#c62828; font-size:.85rem; margin-bottom:12px; display:none;">Falsches Passwort</div>
+<button onclick="checkPw()" style="font-family:'Source Sans 3',sans-serif; font-size:.9rem; font-weight:700; padding:10px 28px; border-radius:999px; border:none; background:#8b1a1a; color:white; cursor:pointer; transition:background .2s;">Anmelden</button>
+</div>
+</div>
+<script>
+async function checkPw() {
+  const input = document.getElementById('pwInput').value;
+  if (input === atob('bXVrYXNpMTg4OSE=')) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('mainApp').style.display = 'block';
+    sessionStorage.setItem('mukasi_auth', '1');
+  } else {
+    document.getElementById('pwError').style.display = 'block';
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwInput').focus();
+  }
+}
+// Auto-login if already authenticated this session
+if (sessionStorage.getItem('mukasi_auth') === '1') {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('mainApp').style.display = 'block';
+}
+</script>
+<div class="app" id="mainApp" style="display:none;">
 <div class="header">
 <h1>MUKASI Termine</h1>
 <p>Termine verwalten, bearbeiten und als Datei exportieren</p>
