@@ -636,7 +636,9 @@ main{position:relative}
 .flyer-event-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--color-secondary);margin-bottom:var(--space-xs);line-height:1.2}
 .flyer-event-badge{display:none}
 .flyer-event-date{font-size:.85rem;font-weight:600;color:var(--color-text-muted);margin-bottom:var(--space-sm)}
-.flyer-event-details{font-size:.9rem;color:var(--color-text-light);line-height:1.7;text-align:left !important}
+.flyer-event-details{font-size:.9rem;color:var(--color-text-light);line-height:1;text-align:left !important;display:flex;flex-direction:column;gap:6px}
+.flyer-event-details strong{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:white;background:var(--color-primary);padding:3px 10px;border-radius:999px;margin-right:8px;vertical-align:middle;margin-top:8px}
+.flyer-event-details br{content:'';display:block;margin-bottom:2px}
 
 @media(max-width:900px){
   .flyer-timeline::before{left:24px}
