@@ -624,7 +624,7 @@ main{position:relative}
 
 /* Even items: text left, flyer right */
 .flyer-event:nth-child(even) .flyer-event-img{order:2;padding-right:0;padding-left:var(--space-2xl)}
-.flyer-event:nth-child(even) .flyer-event-body{order:1;padding-left:0;padding-right:var(--space-2xl);text-align:right}
+.flyer-event:nth-child(even) .flyer-event-body{order:1;padding-left:0;padding-right:var(--space-2xl);text-align:left}
 
 /* Flyer image — clean frame */
 .flyer-event-img-inner{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--color-border-light);max-width:300px}
@@ -636,9 +636,9 @@ main{position:relative}
 .flyer-event-title{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--color-secondary);margin-bottom:var(--space-xs);line-height:1.2}
 .flyer-event-badge{display:none}
 .flyer-event-date{font-size:.85rem;font-weight:600;color:var(--color-text-muted);margin-bottom:var(--space-sm)}
-.flyer-event-details{font-size:.9rem;color:var(--color-text-light);line-height:1;text-align:left !important;display:flex;flex-direction:column;gap:6px}
-.flyer-event-details strong{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:white;background:var(--color-primary);padding:3px 10px;border-radius:999px;margin-right:8px;vertical-align:middle;margin-top:8px}
-.flyer-event-details br{content:'';display:block;margin-bottom:2px}
+.flyer-event-details{font-size:.9rem;color:var(--color-text-light);line-height:1.6;text-align:left}
+.flyer-event-details strong{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--color-primary);background:rgba(139,26,26,.08);padding:2px 9px;border-radius:var(--radius-sm);margin-right:6px;vertical-align:baseline}
+.flyer-event-details br{content:'';display:block;margin-bottom:4px}
 
 @media(max-width:900px){
   .flyer-timeline::before{left:24px}
