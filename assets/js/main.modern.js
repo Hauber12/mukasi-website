@@ -484,7 +484,7 @@
 
       // Split into upcoming and past
       const upcoming = filtered.filter(e => e.dateObj >= now).sort((a, b) => a.dateObj - b.dateObj);
-      const past = filtered.filter(e => e.dateObj < now).sort((a, b) => b.dateObj - a.dateObj);
+      const past = filtered.filter(e => e.dateObj < now).sort((a, b) => a.dateObj - b.dateObj);
 
       let visibleCount = 0;
 
