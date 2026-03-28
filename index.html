@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MUKASI — Musikkapelle Simmerberg</title>
 <meta name="description" content="Musikkapelle Simmerberg e.V. – Blasmusik, Termine, Veranstaltungen und mehr."/>
-<meta name="theme-color" content="#fafaf9"/>
+<meta name="theme-color" content="#1c1917"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.v2.css?v2.0" rel="stylesheet"/>
+<link href="assets/css/styles.v2.css?v2.1" rel="stylesheet"/>
 </head>
 <body class="home">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -78,21 +78,19 @@
 </div>
 </div>
 <main id="main">
-<section class="hero hero--event">
+<!-- HERO — Festumzug-Foto als Hintergrund -->
+<section class="hero">
 <div aria-hidden="true" class="hero-bg"></div>
 <div aria-hidden="true" class="hero-photo"></div>
+<div aria-hidden="true" class="hero-overlay"></div>
 <div class="container hero-grid">
 <div class="hero-copy">
 <p class="eyebrow">Die Blasmusik für Jung &amp; Alt</p>
-<h1>Musikkapelle Simmerberg e.V.</h1>
+<h1>Musikkapelle<br>Simmerberg <span class="red">e.V.</span></h1>
 <p class="lead">Musik. Gemeinschaft. Tradition. – wir freuen uns, dich auf unserer Website zu begrüßen.</p>
 <div class="actions">
 <a class="btn btn-primary" href="termine.html">Zu den Terminen</a>
 <a class="btn btn-secondary" href="jugend.html">Jugend &amp; Ausbildung</a>
-</div>
-<div class="card card--accent" style="margin-top:16px;">
-<p style="margin:0; font-weight:600; font-style:italic;">„Gemeinsam spielen. Gemeinsam feiern. Gemeinsam Simmerberg."</p>
-<p class="muted small" style="margin:6px 0 0;">— Musikkapelle Simmerberg</p>
 </div>
 <dl aria-label="Kurzinfos" class="hero-stats">
 <div class="stat"><dt>Proben</dt><dd>Freitag · 20:00 Uhr</dd></div>
@@ -109,25 +107,15 @@
 </div>
 <div class="actions">
 <a class="btn btn-primary btn-small" href="naeaaexxt-fescht.html">Infos &amp; Programm</a>
-<a class="btn btn-ghost btn-small" href="vergangenens.html">Alle Feschte</a>
+<a class="btn btn-ghost btn-small" href="vergangenens.html" style="color:rgba(255,255,255,.6);">Alle Feschte</a>
 </div>
 </div>
 </div>
-<section class="section">
-<div class="container">
-<div class="section-head"><h2>Herzlich willkommen</h2><a class="link" href="ueber-uns.html">Mehr über uns</a></div>
-<div class="grid grid-2">
-<article class="card card--accent"><h3 class="h4">Wer sind wir?</h3><p class="muted">Eine Musikkapelle mit Freude an traditioneller und moderner Blasmusik – im Dorfleben genauso wie auf Festen.</p><a class="link" href="ueber-uns.html">Weiterlesen</a></article>
-<article class="card card--accent"><h3 class="h4">Unsere Jugend</h3><p class="muted">Ausbildung, Förderung und die Jugendkapelle „Weschtallgaier Notenchaos" – Nachwuchs ist uns wichtig.</p><a class="link" href="jugend.html">Zur Jugend</a></article>
-<article class="card card--accent"><h3 class="h4">Mitglied werden</h3><p class="muted">Ob aktiv oder passiv – wir freuen uns über neue Gesichter und Unterstützer.</p><a class="link" href="kontakt.html">Mitmachen</a></article>
-</div>
-</div>
-</section>
 </section>
 
+<!-- EINDRÜCKE — Fotos direkt nach dem Hero -->
 <section class="section">
 <div class="container">
-<div class="section-head"><h2>Eindrücke</h2><a class="link" href="verein-im-wandel.html">Unser Verein</a></div>
 <div class="about-image-section">
 <div class="about-image-frame"><img alt="Gruppenfoto der Musikkapelle Simmerberg" loading="lazy" src="assets/img/gruppenfoto.jpg"/></div>
 <div class="about-text">
@@ -144,7 +132,20 @@
 </div>
 </section>
 
-<section class="section section-alt page-tint">
+<!-- WILLKOMMEN — Info-Cards -->
+<section class="section section-alt">
+<div class="container">
+<div class="section-head"><h2>Herzlich willkommen</h2><a class="link" href="ueber-uns.html">Mehr über uns</a></div>
+<div class="grid grid-3">
+<article class="card card--accent"><h3 class="h4">Wer sind wir?</h3><p class="muted">Eine Musikkapelle mit Freude an traditioneller und moderner Blasmusik – im Dorfleben genauso wie auf Festen.</p><a class="link" href="ueber-uns.html">Weiterlesen</a></article>
+<article class="card card--accent"><h3 class="h4">Unsere Jugend</h3><p class="muted">Ausbildung, Förderung und die Jugendkapelle „Weschtallgaier Notenchaos" – Nachwuchs ist uns wichtig.</p><a class="link" href="jugend.html">Zur Jugend</a></article>
+<article class="card card--accent"><h3 class="h4">Mitglied werden</h3><p class="muted">Ob aktiv oder passiv – wir freuen uns über neue Gesichter und Unterstützer.</p><a class="link" href="kontakt.html">Mitmachen</a></article>
+</div>
+</div>
+</section>
+
+<!-- NÄCHSTE TERMINE -->
+<section class="section">
 <div class="container">
 <div class="section-head"><h2>Nächste Termine</h2><a class="link" href="termine.html">Alle anzeigen</a></div>
 <div class="next-grid" data-next-events>
@@ -153,6 +154,7 @@
 </div>
 </section>
 
+<!-- CTA -->
 <section class="section section-cta">
 <div class="container cta">
 <div><h2>Du hast Fragen oder willst mitspielen?</h2><p class="muted">Schreib uns kurz – wir melden uns zeitnah.</p></div>
