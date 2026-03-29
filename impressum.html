@@ -1,18 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Impressum — MUKASI</title>
-<meta name="description" content="Musikkapelle Simmerberg e.V. – Blasmusik, Termine und mehr."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.css" rel="stylesheet"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta content="only light" name="color-scheme"/>
+  <meta name="supported-color-schemes" content="light">
+  <!-- Preload critical assets -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/css/styles.modern.css?v4.2" as="style">
+  <link rel="preload" href="assets/img/notenschluessel.png" as="image">
+  
+  <title>Impressum – Musikkapelle Simmerberg</title>
+  <link rel="stylesheet" href="assets/css/styles.modern.css?v4.2" />
 </head>
 <body>
-<a class="skip-link" href="#main">Zum Inhalt springen</a>
-<header class="site-header" data-header>
+<header class="site-header" data-header="">
 <div class="container header-inner">
 <a aria-label="Startseite" class="brand-inline brand-inline--left" href="index.html">
 <img alt="Musikkapelle Simmerberg e.V." class="brand-inline-logo" src="assets/img/notenschluessel.png"/>
@@ -21,11 +25,11 @@
 <span class="brand-inline-large">Simmerberg <small>e.V.</small></span>
 </div>
 </a>
-<nav aria-label="Hauptnavigation" class="site-nav site-nav--right" data-nav>
+<nav aria-label="Hauptnavigation" class="site-nav site-nav--right" data-nav="">
 <a class="nav-link" href="index.html">Home</a>
 <div class="nav-item has-dropdown">
 <a class="nav-link" href="verein.html">Musikkapelle</a>
-<div class="dropdown" role="menu">
+<div aria-label="Musikkapelle Untermenü" class="dropdown" role="menu">
 <a class="dropdown-link" href="ueber-uns.html">Über uns</a>
 <a class="dropdown-link" href="verein-im-wandel.html">Verein im Wandel</a>
 <a class="dropdown-link" href="register.html">Register</a>
@@ -35,7 +39,7 @@
 </div>
 <div class="nav-item has-dropdown">
 <a class="nav-link" href="foerderverein.html">Förderverein</a>
-<div class="dropdown" role="menu">
+<div aria-label="Förderverein Untermenü" class="dropdown" role="menu">
 <a class="dropdown-link" href="veranstaltungen.html">Veranstaltungen</a>
 </div>
 </div>
@@ -43,77 +47,132 @@
 <a class="nav-link" href="jugend.html">Jugend</a>
 <a class="nav-link nav-link--cta" href="termine.html">Termine 2026</a>
 </nav>
-<button type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menü öffnen" class="nav-toggle" data-nav-toggle>
+<button type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menü öffnen" class="nav-toggle" data-nav-toggle="" type="button">
 <span aria-hidden="true" class="nav-toggle-bars"></span><span class="nav-toggle-label">Menü</span>
 </button>
 </div>
-</header>
-<div class="mobile-nav" data-mobile-nav id="mobile-menu">
-<div class="mobile-nav-inner">
-<button class="mobile-nav-close" type="button" data-nav-close aria-label="Menü schließen"><span aria-hidden="true">×</span> Schließen</button>
+<div class="mobile-nav" data-mobile-nav="" hidden="" id="mobile-menu">
+<div class="container mobile-nav-inner">
+        <button class="mobile-nav-close" type="button" data-nav-close aria-label="Menü schließen"><span aria-hidden="true">×</span> Schließen</button>
 <a class="nav-link" href="index.html">Home</a>
-<details class="mnav-details"><summary class="mnav-summary">Musikkapelle</summary><div class="mnav-links">
+<details class="mnav-details">
+<summary class="mnav-summary">Musikkapelle</summary>
+<div class="mnav-links">
 <a class="nav-link" href="ueber-uns.html">Über uns</a>
 <a class="nav-link" href="verein-im-wandel.html">Verein im Wandel</a>
 <a class="nav-link" href="register.html">Register</a>
 <a class="nav-link" href="vorstandschaft.html">Vorstandschaft</a>
 <a class="nav-link" href="ehrenmitglieder.html">Ehrenmitglieder</a>
-</div></details>
-<details class="mnav-details"><summary class="mnav-summary">Förderverein</summary><div class="mnav-links">
+</div>
+</details>
+<details class="mnav-details">
+<summary class="mnav-summary">Förderverein</summary>
+<div class="mnav-links">
 <a class="nav-link" href="foerderverein.html">Unser Förderverein</a>
 <a class="nav-link" href="veranstaltungen.html">Veranstaltungen</a>
-</div></details>
+</div>
+</details>
 <a class="nav-link" href="vergangenens.html">Vergangenes</a>
 <a class="nav-link" href="jugend.html">Jugend</a>
 <a class="nav-link nav-link--cta" href="termine.html">Termine 2026</a>
 <a class="nav-link" href="kontakt.html">Kontakt</a>
 </div>
 </div>
-<main id="main">
-<section class="page-head"><div class="container"><p class="eyebrow">Rechtliches</p><h1>Impressum</h1><p class="lead">Angaben gemäß § 5 DDG</p></div></section>
-<section class="section"><div class="container" style="max-width:800px;">
-<div class="card" style="padding:2rem; margin-bottom:2rem;"><h2 style="margin-bottom:1.5rem;">Inhaltlich verantwortlich</h2><p><strong>Musikkapelle Simmerberg e.V.</strong></p><p>Vorstandsteam: Johanna Blank, Markus Ihler, Martin Wucher</p><p style="margin-top:1rem;">Buchstr. 11<br/>88171 Simmerberg</p><p style="margin-top:1rem;">Tel.: <a href="tel:+491771745818">0177 – 174 58 18</a><br/>E-Mail: <a href="mailto:mukasi@gmx.net">mukasi@gmx.net</a></p><p style="margin-top:1rem;">Amtsgericht Kempten · Registernr.: 30407<br/>USt-IdNr.: DE293060536</p></div>
-<h2 style="margin-bottom:1.5rem;">Haftungshinweise</h2>
-<div style="margin-bottom:2rem;"><h3 style="margin-bottom:.5rem;">Haftung für Inhalte</h3><p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Dienstanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, die übermittelten oder gespeicherten fremden Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p></div>
-<div style="margin-bottom:2rem;"><h3 style="margin-bottom:.5rem;">Haftung für Links</h3><p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p></div>
-<div style="margin-bottom:2rem;"><h3 style="margin-bottom:.5rem;">Urheberrecht</h3><p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p></div>
-<div style="margin-bottom:2rem;"><h3 style="margin-bottom:.5rem;">Datenschutz</h3><p>Soweit auf unseren Seiten personenbezogene Daten erhoben werden, erfolgt dies soweit möglich stets auf freiwilliger Basis.</p><p style="margin-top:1rem;">Unsere ausführliche Datenschutzerklärung findest du <a href="datenschutz.html">hier</a>.</p></div>
-</div></section>
+</header>
+<main class="page" id="main">
+  <section class="page-head">
+    <div class="container">
+      <p class="eyebrow">Rechtliches</p>
+      <h1>Impressum</h1>
+      <p class="lead">Angaben gemäß § 5 DDG</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="max-width:800px;">
+
+      <div class="card" style="padding: var(--space-lg); margin-bottom: var(--space-lg);">
+        <h2 style="margin-bottom: var(--space-md);">Inhaltlich verantwortlich</h2>
+        <p><strong>Musikkapelle Simmerberg e.V.</strong></p>
+        <p>Vorstandsteam: Johanna Blank, Markus Ihler, Martin Wucher</p>
+        <p style="margin-top: var(--space-sm);">
+          Buchstr. 11<br/>
+          88171 Simmerberg
+        </p>
+        <p style="margin-top: var(--space-sm);">
+          Tel.: <a href="tel:+491771745818">0177 – 174 58 18</a><br/>
+          E-Mail: <a href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
+        </p>
+        <p style="margin-top: var(--space-sm);">
+          Amtsgericht Kempten · Registernr.: 30407<br/>
+          USt-IdNr.: DE293060536
+        </p>
+      </div>
+
+      <h2 style="margin-bottom: var(--space-md);">Haftungshinweise</h2>
+
+      <div style="margin-bottom: var(--space-lg);">
+        <h3 style="margin-bottom: var(--space-xs);">Haftung für Inhalte</h3>
+        <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Dienstanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Wir sind jedoch nicht verpflichtet, die übermittelten oder gespeicherten fremden Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+      </div>
+
+      <div style="margin-bottom: var(--space-lg);">
+        <h3 style="margin-bottom: var(--space-xs);">Haftung für Links</h3>
+        <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+      </div>
+
+      <div style="margin-bottom: var(--space-lg);">
+        <h3 style="margin-bottom: var(--space-xs);">Urheberrecht</h3>
+        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Die Betreiber der Seiten sind bemüht, stets die Urheberrechte anderer zu beachten bzw. auf selbst erstellte sowie lizenzfreie Werke zurückzugreifen. Beiträge Dritter sind als solche gekennzeichnet.</p>
+      </div>
+
+      <div style="margin-bottom: var(--space-lg);">
+        <h3 style="margin-bottom: var(--space-xs);">Datenschutz</h3>
+        <p>Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies soweit möglich stets auf freiwilliger Basis. Die Nutzung der Angebote und Dienste ist, soweit möglich, stets ohne Angabe personenbezogener Daten möglich.</p>
+        <p style="margin-top: var(--space-sm);">Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails und dergleichen, vor.</p>
+        <p style="margin-top: var(--space-sm);">Unsere ausführliche Datenschutzerklärung findest du <a href="datenschutz.html">hier</a>.</p>
+      </div>
+
+    </div>
+  </section>
 </main>
 <footer class="site-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<img src="assets/img/notenschluessel.png" alt="" class="footer-logo" aria-hidden="true"/>
-<div class="footer-title">Musikkapelle Simmerberg</div>
-<div class="footer-sub">MUKASI · Simmerberg</div>
-<div class="footer-legal">
-<a class="footer-pill" href="impressum.html">Impressum</a>
-<a class="footer-pill" href="datenschutz.html">Datenschutz</a>
-</div>
-</div>
-<div class="footer-links">
-<div class="footer-col">
-<div class="footer-heading">Navigation</div>
-<a href="index.html">Start</a>
-<a href="termine.html">Termine</a>
-<a href="naeaaexxt-fescht.html">Näääxt Fescht</a>
-<a href="kontakt.html">Kontakt</a>
-</div>
-<div class="footer-col">
-<div class="footer-heading">Kontakt</div>
-<a href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
-<div class="footer-meta">Proben: Freitag · 20:00 Uhr</div>
-<div class="footer-meta">Ort: Simmerberg</div>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
-<span>Blasmusik für jung & alt</span>
-</div>
-</div>
-</footer>
-<script defer src="assets/js/main.js"></script>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/notenschluessel.png" alt="" class="footer-logo" aria-hidden="true"/>
+          <div class="footer-title">Musikkapelle Simmerberg</div>
+          <div class="footer-sub">MUKASI · Simmerberg</div>
+          <div class="footer-legal">
+            <a class="footer-pill" href="impressum.html">Impressum</a>
+            <a class="footer-pill" href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-heading">Navigation</div>
+            <a href="index.html">Start</a>
+            <a href="termine.html">Termine</a>
+            <a href="naaaxt-fescht.html">Näääxt Fescht</a>
+            <a href="kontakt.html">Kontakt</a>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-heading">Kontakt</div>
+            <a class="footer-link" href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
+            <div class="footer-meta">Proben: Freitag · 20:00 Uhr</div>
+            <div class="footer-meta">Ort: Simmerberg</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
+        <span class="footer-bottom-right">Blasmusik für jung & alt</span>
+      </div>
+    </div>
+  </footer>
+<script src="assets/js/main.modern.js?v4.2" defer></script>
 </body>
 </html>
