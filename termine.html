@@ -2,15 +2,13 @@
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<meta name="color-scheme" content="only light"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Termine — MUKASI</title>
-<meta name="description" content="Musikkapelle Simmerberg e.V. – Blasmusik, Termine, Veranstaltungen und mehr."/>
-<meta name="theme-color" content="#fafaf9"/>
+<meta name="description" content="Musikkapelle Simmerberg e.V. – Blasmusik, Termine und mehr."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.v2.css?v2.0" rel="stylesheet"/>
+<link href="assets/css/styles.css" rel="stylesheet"/>
 </head>
 <body>
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -27,7 +25,7 @@
 <a class="nav-link" href="index.html">Home</a>
 <div class="nav-item has-dropdown">
 <a class="nav-link" href="verein.html">Musikkapelle</a>
-<div aria-label="Musikkapelle Untermenü" class="dropdown" role="menu">
+<div class="dropdown" role="menu">
 <a class="dropdown-link" href="ueber-uns.html">Über uns</a>
 <a class="dropdown-link" href="verein-im-wandel.html">Verein im Wandel</a>
 <a class="dropdown-link" href="register.html">Register</a>
@@ -37,7 +35,7 @@
 </div>
 <div class="nav-item has-dropdown">
 <a class="nav-link" href="foerderverein.html">Förderverein</a>
-<div aria-label="Förderverein Untermenü" class="dropdown" role="menu">
+<div class="dropdown" role="menu">
 <a class="dropdown-link" href="veranstaltungen.html">Veranstaltungen</a>
 </div>
 </div>
@@ -54,23 +52,17 @@
 <div class="mobile-nav-inner">
 <button class="mobile-nav-close" type="button" data-nav-close aria-label="Menü schließen"><span aria-hidden="true">×</span> Schließen</button>
 <a class="nav-link" href="index.html">Home</a>
-<details class="mnav-details">
-<summary class="mnav-summary">Musikkapelle</summary>
-<div class="mnav-links">
+<details class="mnav-details"><summary class="mnav-summary">Musikkapelle</summary><div class="mnav-links">
 <a class="nav-link" href="ueber-uns.html">Über uns</a>
 <a class="nav-link" href="verein-im-wandel.html">Verein im Wandel</a>
 <a class="nav-link" href="register.html">Register</a>
 <a class="nav-link" href="vorstandschaft.html">Vorstandschaft</a>
 <a class="nav-link" href="ehrenmitglieder.html">Ehrenmitglieder</a>
-</div>
-</details>
-<details class="mnav-details">
-<summary class="mnav-summary">Förderverein</summary>
-<div class="mnav-links">
+</div></details>
+<details class="mnav-details"><summary class="mnav-summary">Förderverein</summary><div class="mnav-links">
 <a class="nav-link" href="foerderverein.html">Unser Förderverein</a>
 <a class="nav-link" href="veranstaltungen.html">Veranstaltungen</a>
-</div>
-</details>
+</div></details>
 <a class="nav-link" href="vergangenens.html">Vergangenes</a>
 <a class="nav-link" href="jugend.html">Jugend</a>
 <a class="nav-link nav-link--cta" href="termine.html">Termine 2026</a>
@@ -103,20 +95,6 @@
 </div>
 </section>
 </main>
-<div aria-hidden="true" aria-label="Termin-Details" class="dialog" data-dialog role="dialog">
-<div class="dialog-backdrop" data-dialog-close></div>
-<div class="dialog-panel" role="document">
-<div class="dialog-head"><h2 class="h3" data-dialog-title>Termin</h2><button aria-label="Schließen" class="dialog-close" data-dialog-close type="button">×</button></div>
-<div class="dialog-body">
-<div class="detail-grid">
-<div class="detail-row"><div aria-hidden="true" class="detail-icon">🗓️</div><div><div class="detail-label">Wann</div><div class="detail-value" data-dialog-when></div></div></div>
-<div class="detail-row"><div aria-hidden="true" class="detail-icon">📍</div><div><div class="detail-label">Wo</div><div class="detail-value" data-dialog-where></div></div></div>
-<div class="detail-row"><div aria-hidden="true" class="detail-icon">ℹ️</div><div><div class="detail-label">Info</div><div class="detail-value" data-dialog-notes></div></div></div>
-</div>
-</div>
-<div class="dialog-actions"><button class="btn btn-secondary" data-dialog-close type="button">Schließen</button><a class="btn btn-ghost" href="kontakt.html">Anfragen</a></div>
-</div>
-</div>
 <footer class="site-footer">
 <div class="container">
 <div class="footer-grid">
@@ -147,10 +125,11 @@
 </div>
 <div class="footer-bottom">
 <span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
-<span class="footer-bottom-right">Blasmusik für jung & alt</span>
+<span>Blasmusik für jung & alt</span>
 </div>
 </div>
 </footer>
 <script src="assets/data/termine.v26.js"></script>
-<script defer src="assets/js/main.v2.js?v2.0"></script>
-</body></html>
+<script defer src="assets/js/main.js"></script>
+</body>
+</html>
