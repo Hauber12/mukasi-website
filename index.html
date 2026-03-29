@@ -1,20 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<meta name="color-scheme" content="only light"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta content="only light" name="color-scheme"/>
+  <meta name="supported-color-schemes" content="light">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+  <!-- Preload critical assets -->
+  <link rel="preload" href="assets/css/styles.modern.css?v4.2" as="style">
+  <link rel="preload" href="assets/img/notenschluessel.png" as="image">
+  
 <title>MUKASI — Musikkapelle Simmerberg</title>
-<meta name="description" content="Musikkapelle Simmerberg e.V. – Blasmusik, Termine, Veranstaltungen und mehr."/>
-<meta name="theme-color" content="#fafaf9"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.v2.css?v2.0" rel="stylesheet"/>
-</head>
+<meta content="Aktuelle Termine, Auftritte, News und Einblicke der Musikkapelle Simmerberg." name="description"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="assets/css/styles.modern.css?v4.2" rel="stylesheet"/>
+</meta></head>
 <body class="home">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
-<header class="site-header" data-header>
+<header class="site-header" data-header="">
 <div class="container header-inner">
 <a aria-label="Startseite" class="brand-inline brand-inline--left" href="index.html">
 <img alt="Musikkapelle Simmerberg e.V." class="brand-inline-logo" src="assets/img/notenschluessel.png"/>
@@ -23,7 +28,7 @@
 <span class="brand-inline-large">Simmerberg <small>e.V.</small></span>
 </div>
 </a>
-<nav aria-label="Hauptnavigation" class="site-nav site-nav--right" data-nav>
+<nav aria-label="Hauptnavigation" class="site-nav site-nav--right" data-nav="">
 <a class="nav-link" href="index.html">Home</a>
 <div class="nav-item has-dropdown">
 <a class="nav-link" href="verein.html">Musikkapelle</a>
@@ -45,14 +50,15 @@
 <a class="nav-link" href="jugend.html">Jugend</a>
 <a class="nav-link nav-link--cta" href="termine.html">Termine 2026</a>
 </nav>
-<button type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menü öffnen" class="nav-toggle" data-nav-toggle>
+<button type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menü öffnen" class="nav-toggle" data-nav-toggle="">
 <span aria-hidden="true" class="nav-toggle-bars"></span><span class="nav-toggle-label">Menü</span>
 </button>
 </div>
+
 </header>
-<div class="mobile-nav" data-mobile-nav id="mobile-menu">
+<div class="mobile-nav" data-mobile-nav="" id="mobile-menu">
 <div class="mobile-nav-inner">
-<button class="mobile-nav-close" type="button" data-nav-close aria-label="Menü schließen"><span aria-hidden="true">×</span> Schließen</button>
+        <button class="mobile-nav-close" type="button" data-nav-close aria-label="Menü schließen"><span aria-hidden="true">×</span> Schließen</button>
 <a class="nav-link" href="index.html">Home</a>
 <details class="mnav-details">
 <summary class="mnav-summary">Musikkapelle</summary>
@@ -77,7 +83,11 @@
 <a class="nav-link" href="kontakt.html">Kontakt</a>
 </div>
 </div>
+
+
+
 <main id="main">
+<!-- HERO -->
 <section class="hero hero--event">
 <div aria-hidden="true" class="hero-bg"></div>
 <div aria-hidden="true" class="hero-photo"></div>
@@ -85,23 +95,36 @@
 <div class="hero-copy">
 <p class="eyebrow">Die Blasmusik für Jung &amp; Alt</p>
 <h1>Musikkapelle Simmerberg e.V.</h1>
-<p class="lead">Musik. Gemeinschaft. Tradition. – wir freuen uns, dich auf unserer Website zu begrüßen.</p>
+<p class="lead">
+            Musik. Gemeinschaft. Tradition. – wir freuen uns, dich auf unserer Website zu begrüßen.
+          </p>
 <div class="actions">
 <a class="btn btn-primary" href="termine.html">Zu den Terminen</a>
 <a class="btn btn-secondary" href="jugend.html">Jugend &amp; Ausbildung</a>
 </div>
-<div class="card card--accent" style="margin-top:16px;">
-<p style="margin:0; font-weight:600; font-style:italic;">„Gemeinsam spielen. Gemeinsam feiern. Gemeinsam Simmerberg."</p>
+<div class="card" style="margin-top:16px; border-left:4px solid rgba(181,18,23,.55);">
+<p style="margin:0; font-weight:700;">„Gemeinsam spielen. Gemeinsam feiern. Gemeinsam Simmerberg."</p>
 <p class="muted small" style="margin:6px 0 0;">— Musikkapelle Simmerberg</p>
 </div>
 <dl aria-label="Kurzinfos" class="hero-stats">
-<div class="stat"><dt>Proben</dt><dd>Freitag · 20:00 Uhr</dd></div>
-<div class="stat"><dt>Ort</dt><dd>Simmerberg</dd></div>
-<div class="stat"><dt>Anfragen</dt><dd><a href="kontakt.html">Kontakt</a></dd></div>
+<div class="stat">
+<dt>Proben</dt>
+<dd>Freitag · 20:00 Uhr</dd>
+</div>
+<div class="stat">
+<dt>Ort</dt>
+<dd>Simmerberg</dd>
+</div>
+<div class="stat">
+<dt>Anfragen</dt>
+<dd><a href="kontakt.html">Kontakt</a></dd>
+</div>
 </dl>
 </div>
 <div aria-label="Näääxxt Fescht Teaser" class="hero-card hero-card--flyer" role="region">
-<div class="flyer-frame"><img alt="Flyer Näääxxt Fescht 9.0" loading="lazy" src="assets/img/flyer-nf9.png"/></div>
+<div class="flyer-frame">
+<img alt="Flyer Näääxxt Fescht 9.0" loading="lazy" src="assets/img/flyer-nf9.png"/>
+</div>
 <div class="badge badge--hot">Näääxxt Fescht 9.0</div>
 <div>
 <h2 class="h3" style="margin-bottom:.25rem;">08. – 10. Mai 2025</h2>
@@ -115,21 +138,41 @@
 </div>
 <section class="section">
 <div class="container">
-<div class="section-head"><h2>Herzlich willkommen</h2><a class="link" href="ueber-uns.html">Mehr über uns</a></div>
+<div class="section-head">
+<h2>Herzlich willkommen</h2>
+<a class="link" href="ueber-uns.html">Mehr über uns</a>
+</div>
 <div class="grid grid-2">
-<article class="card card--accent"><h3 class="h4">Wer sind wir?</h3><p class="muted">Eine Musikkapelle mit Freude an traditioneller und moderner Blasmusik – im Dorfleben genauso wie auf Festen.</p><a class="link" href="ueber-uns.html">Weiterlesen</a></article>
-<article class="card card--accent"><h3 class="h4">Unsere Jugend</h3><p class="muted">Ausbildung, Förderung und die Jugendkapelle „Weschtallgaier Notenchaos" – Nachwuchs ist uns wichtig.</p><a class="link" href="jugend.html">Zur Jugend</a></article>
-<article class="card card--accent"><h3 class="h4">Mitglied werden</h3><p class="muted">Ob aktiv oder passiv – wir freuen uns über neue Gesichter und Unterstützer.</p><a class="link" href="kontakt.html">Mitmachen</a></article>
+<article class="card">
+<h3 class="h4">Wer sind wir?</h3>
+<p class="muted">Eine Musikkapelle mit Freude an traditioneller und moderner Blasmusik – im Dorfleben genauso wie auf Festen.</p>
+<a class="link" href="ueber-uns.html">Weiterlesen</a>
+</article>
+<article class="card">
+<h3 class="h4">Unsere Jugend</h3>
+<p class="muted">Ausbildung, Förderung und die Jugendkapelle „Weschtallgaier Notenchaos“ – Nachwuchs ist uns wichtig.</p>
+<a class="link" href="jugend.html">Zur Jugend</a>
+</article>
+<article class="card">
+<h3 class="h4">Mitglied werden</h3>
+<p class="muted">Ob aktiv oder passiv – wir freuen uns über neue Gesichter und Unterstützer.</p>
+<a class="link" href="kontakt.html">Mitmachen</a>
+</article>
 </div>
 </div>
 </section>
 </section>
-
+<!-- NÄCHSTE TERMINE -->
 <section class="section">
 <div class="container">
-<div class="section-head"><h2>Eindrücke</h2><a class="link" href="verein-im-wandel.html">Unser Verein</a></div>
+<div class="section-head">
+<h2>Eindrücke</h2>
+<a class="link" href="verein-im-wandel.html">Unser Verein</a>
+</div>
 <div class="about-image-section">
-<div class="about-image-frame"><img alt="Gruppenfoto der Musikkapelle Simmerberg" loading="lazy" src="assets/img/gruppenfoto.jpg"/></div>
+<div class="about-image-frame">
+<img alt="Gruppenfoto der Musikkapelle Simmerberg" loading="lazy" src="assets/img/gruppenfoto.jpg"/>
+</div>
 <div class="about-text">
 <p class="eyebrow">Unsere Kapelle</p>
 <h2>Gemeinsam stark</h2>
@@ -138,63 +181,86 @@
 </div>
 </div>
 <div class="photo-showcase">
-<div class="photo-showcase-item"><img alt="Festzelt-Stimmung mit der Musikkapelle Simmerberg" loading="lazy" src="assets/img/festzelt.jpg"/><div class="photo-showcase-caption">Feststimmung im Festzelt</div></div>
-<div class="photo-showcase-item"><img alt="Festumzug der Musikkapelle Simmerberg" loading="lazy" src="assets/img/festumzug.jpg"/><div class="photo-showcase-caption">Festumzug mit Fahne und Tracht</div></div>
+<div class="photo-showcase-item">
+<img alt="Festzelt-Stimmung mit der Musikkapelle Simmerberg" loading="lazy" src="assets/img/festzelt.jpg"/>
+<div class="photo-showcase-caption">Feststimmung im Festzelt</div>
+</div>
+<div class="photo-showcase-item">
+<img alt="Festumzug der Musikkapelle Simmerberg" loading="lazy" src="assets/img/festumzug.jpg"/>
+<div class="photo-showcase-caption">Festumzug mit Fahne und Tracht</div>
+</div>
 </div>
 </div>
 </section>
-
+<!-- NÄCHSTE TERMINE -->
 <section class="section section-alt page-tint">
 <div class="container">
-<div class="section-head"><h2>Nächste Termine</h2><a class="link" href="termine.html">Alle anzeigen</a></div>
-<div class="next-grid" data-next-events>
-<div class="empty-state" style="padding:18px;"><strong>Nächste Termine werden geladen…</strong><p class="muted small" style="margin:6px 0 0;">Falls hier nichts erscheint, sind momentan keine Termine vorhanden.</p></div>
+<div class="section-head">
+<h2>Nächste Termine</h2>
+<a class="link" href="termine.html">Alle anzeigen</a>
+</div>
+<div class="next-grid" data-next-events="">
+<div class="empty-state" style="padding:18px;">
+<strong>Nächste Termine werden geladen…</strong>
+<p class="muted small" style="margin:6px 0 0;">Falls hier nichts erscheint, sind momentan keine Termine vorhanden.</p>
+</div>
 </div>
 </div>
 </section>
-
+<!-- CTA -->
 <section class="section section-cta">
 <div class="container cta">
-<div><h2>Du hast Fragen oder willst mitspielen?</h2><p class="muted">Schreib uns kurz – wir melden uns zeitnah.</p></div>
-<div class="actions"><a class="btn btn-primary" href="kontakt.html">Kontakt</a></div>
+<div>
+<h2>Du hast Fragen oder willst mitspielen?</h2>
+<p class="muted">
+            Schreib uns kurz – wir melden uns zeitnah.
+          </p>
+</div>
+<div class="actions">
+<a class="btn btn-primary" href="kontakt.html">Kontakt</a>
+</div>
 </div>
 </section>
-<script id="next-events-data" type="application/json">[{"title":"Kinderfasching Simmerberg","date":"2026-02-01T13:13","type":"verein","location":"Simmerberg","notes":""},{"title":"Generalversammlung","date":"2026-03-06T19:30","type":"verein","location":"Krone (Simmerberg)","notes":""},{"title":"Spieleabend","date":"2026-04-25T19:00","type":"verein","location":"Krone (Simmerberg)","notes":""}]</script>
+<script id="next-events-data" type="application/json">[{"title": "Kinderfasching Simmerberg", "date": "2026-02-01T13:13", "type": "verein", "location": "Simmerberg", "notes": ""}, {"title": "Generalversammlung", "date": "2026-03-06T19:30", "type": "verein", "location": "Krone (Simmerberg)", "notes": ""}, {"title": "Spieleabend", "date": "2026-04-25T19:00", "type": "verein", "location": "Krone (Simmerberg)", "notes": ""}]</script>
 </main>
 <footer class="site-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<img src="assets/img/notenschluessel.png" alt="" class="footer-logo" aria-hidden="true"/>
-<div class="footer-title">Musikkapelle Simmerberg</div>
-<div class="footer-sub">MUKASI · Simmerberg</div>
-<div class="footer-legal">
-<a class="footer-pill" href="impressum.html">Impressum</a>
-<a class="footer-pill" href="datenschutz.html">Datenschutz</a>
-</div>
-</div>
-<div class="footer-links">
-<div class="footer-col">
-<div class="footer-heading">Navigation</div>
-<a href="index.html">Start</a>
-<a href="termine.html">Termine</a>
-<a href="naeaaexxt-fescht.html">Näääxt Fescht</a>
-<a href="kontakt.html">Kontakt</a>
-</div>
-<div class="footer-col">
-<div class="footer-heading">Kontakt</div>
-<a href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
-<div class="footer-meta">Proben: Freitag · 20:00 Uhr</div>
-<div class="footer-meta">Ort: Simmerberg</div>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
-<span class="footer-bottom-right">Blasmusik für jung & alt</span>
-</div>
-</div>
-</footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/notenschluessel.png" alt="" class="footer-logo" aria-hidden="true"/>
+          <div class="footer-title">Musikkapelle Simmerberg</div>
+          <div class="footer-sub">MUKASI · Simmerberg</div>
+          <div class="footer-legal">
+            <a class="footer-pill" href="impressum.html">Impressum</a>
+            <a class="footer-pill" href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-heading">Navigation</div>
+            <a href="index.html">Start</a>
+            <a href="termine.html">Termine</a>
+            <a href="naaaxt-fescht.html">Näääxt Fescht</a>
+            <a href="kontakt.html">Kontakt</a>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-heading">Kontakt</div>
+            <a class="footer-link" href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
+            <div class="footer-meta">Proben: Freitag · 20:00 Uhr</div>
+            <div class="footer-meta">Ort: Simmerberg</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
+        <span class="footer-bottom-right">Blasmusik für jung & alt</span>
+      </div>
+    </div>
+  </footer>
 <script src="assets/data/termine.v26.js"></script>
-<script defer src="assets/js/main.v2.js?v2.0"></script>
-</body></html>
+<script defer="" src="assets/js/main.modern.js?v4.2"></script>
+</body>
+</html>

@@ -1,19 +1,26 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
 <meta charset="utf-8"/>
-<meta name="color-scheme" content="only light"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta content="only light" name="color-scheme"/>
+  <meta name="supported-color-schemes" content="light">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+  <!-- Preload critical assets -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/css/styles.modern.css?v4.2" as="style">
+  <link rel="preload" href="assets/img/notenschluessel.png" as="image">
+  
 <title>Kontakt — MUKASI</title>
-<meta name="description" content="Musikkapelle Simmerberg e.V. – Blasmusik, Termine, Veranstaltungen und mehr."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.v2.css?v2.0" rel="stylesheet"/>
-</head>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="Kontakt zur Musikkapelle Simmerberg: Anfragen, Mitmachen, Buchungen." name="description">
+<link href="assets/css/styles.modern.css?v4.2" rel="stylesheet"/>
+</meta></meta></head>
 <body>
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
-<header class="site-header" data-header>
+<header class="site-header" data-header="">
 <div class="container header-inner">
 <a aria-label="Startseite" class="brand-inline brand-inline--left" href="index.html">
 <img alt="Musikkapelle Simmerberg e.V." class="brand-inline-logo" src="assets/img/notenschluessel.png"/>
@@ -22,7 +29,7 @@
 <span class="brand-inline-large">Simmerberg <small>e.V.</small></span>
 </div>
 </a>
-<nav aria-label="Hauptnavigation" class="site-nav site-nav--right" data-nav>
+<nav aria-label="Hauptnavigation" class="site-nav site-nav--right" data-nav="">
 <a class="nav-link" href="index.html">Home</a>
 <div class="nav-item has-dropdown">
 <a class="nav-link" href="verein.html">Musikkapelle</a>
@@ -44,32 +51,40 @@
 <a class="nav-link" href="jugend.html">Jugend</a>
 <a class="nav-link nav-link--cta" href="termine.html">Termine 2026</a>
 </nav>
-<button type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menü öffnen" class="nav-toggle" data-nav-toggle>
+<button type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menü öffnen" class="nav-toggle" data-nav-toggle="" type="button">
 <span aria-hidden="true" class="nav-toggle-bars"></span><span class="nav-toggle-label">Menü</span>
 </button>
 </div>
-</header>
-<div class="mobile-nav" data-mobile-nav id="mobile-menu">
-<div class="mobile-nav-inner">
-<button class="mobile-nav-close" type="button" data-nav-close aria-label="Menü schließen"><span aria-hidden="true">×</span> Schließen</button>
+<div class="mobile-nav" data-mobile-nav="" hidden="" id="mobile-menu">
+<div class="container mobile-nav-inner">
+        <button class="mobile-nav-close" type="button" data-nav-close aria-label="Menü schließen"><span aria-hidden="true">×</span> Schließen</button>
 <a class="nav-link" href="index.html">Home</a>
-<details class="mnav-details"><summary class="mnav-summary">Musikkapelle</summary><div class="mnav-links">
+<details class="mnav-details">
+<summary class="mnav-summary">Musikkapelle</summary>
+<div class="mnav-links">
 <a class="nav-link" href="ueber-uns.html">Über uns</a>
 <a class="nav-link" href="verein-im-wandel.html">Verein im Wandel</a>
 <a class="nav-link" href="register.html">Register</a>
 <a class="nav-link" href="vorstandschaft.html">Vorstandschaft</a>
 <a class="nav-link" href="ehrenmitglieder.html">Ehrenmitglieder</a>
-</div></details>
-<details class="mnav-details"><summary class="mnav-summary">Förderverein</summary><div class="mnav-links">
+</div>
+</details>
+<details class="mnav-details">
+<summary class="mnav-summary">Förderverein</summary>
+<div class="mnav-links">
 <a class="nav-link" href="foerderverein.html">Unser Förderverein</a>
 <a class="nav-link" href="veranstaltungen.html">Veranstaltungen</a>
-</div></details>
+</div>
+</details>
 <a class="nav-link" href="vergangenens.html">Vergangenes</a>
 <a class="nav-link" href="jugend.html">Jugend</a>
 <a class="nav-link nav-link--cta" href="termine.html">Termine 2026</a>
 <a class="nav-link" href="kontakt.html">Kontakt</a>
 </div>
 </div>
+</header>
+
+
 <main id="main">
 <section class="page-head">
 <div class="container">
@@ -82,64 +97,165 @@
 <div class="container">
 <div class="grid grid-2">
 <div>
-<div class="section-head"><h2>Kontaktformular</h2></div>
-<p aria-live="polite" class="muted small" data-form-status></p>
+<div class="section-head">
+<h2>Kontaktformular</h2>
+</div>
+<p aria-live="polite" class="muted small" data-form-status=""></p>
 <form class="card form" id="kontakt-form" action="https://formspree.io/f/maqpvdlp" method="POST" style="max-width:none;">
 <input type="hidden" name="_subject" value="Neue Nachricht über mukasi.de"/>
 <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off"/>
-<label class="field"><span class="field-label">Name *</span><input autocomplete="name" class="input" minlength="2" name="name" required type="text"/><span class="field-hint" data-error-for="name"></span></label>
-<label class="field"><span class="field-label">E-Mail *</span><input autocomplete="email" class="input" name="email" required type="email"/><span class="field-hint" data-error-for="email"></span></label>
-<label class="field"><span class="field-label">Betreff</span><input class="input" name="subject" type="text"/></label>
-<label class="field" id="mitmachen"><span class="field-label">Nachricht *</span><textarea class="input" minlength="10" name="message" placeholder="Instrument / Anfrage / Termin..." required rows="6"></textarea><span class="field-hint" data-error-for="message"></span></label>
-<label class="check"><input name="privacy" required type="checkbox"/><span>Ich habe die Datenschutzhinweise gelesen und stimme zu. *</span></label>
+<label class="field">
+<span class="field-label">Name *</span>
+<input autocomplete="name" class="input" minlength="2" name="name" required="" type="text"/>
+<span class="field-hint" data-error-for="name"></span>
+</label>
+<label class="field">
+<span class="field-label">E-Mail *</span>
+<input autocomplete="email" class="input" name="email" required="" type="email"/>
+<span class="field-hint" data-error-for="email"></span>
+</label>
+<label class="field">
+<span class="field-label">Betreff</span>
+<input class="input" name="subject" type="text"/>
+</label>
+<label class="field" id="mitmachen">
+<span class="field-label">Nachricht *</span>
+<textarea class="input" minlength="10" name="message" placeholder="Instrument / Anfrage / Termin..." required="" rows="6"></textarea>
+<span class="field-hint" data-error-for="message"></span>
+</label>
+<label class="check">
+<input name="privacy" required="" type="checkbox"/>
+<span>Ich habe die Datenschutzhinweise gelesen und stimme zu. *</span>
+</label>
 <span class="field-hint" data-error-for="privacy"></span>
-<div class="actions"><button class="btn btn-primary" type="submit">Absenden</button><button class="btn btn-ghost" type="reset">Zurücksetzen</button></div>
+<div class="actions">
+<button class="btn btn-primary" type="submit">Absenden</button>
+<button class="btn btn-ghost" type="reset">Zurücksetzen</button>
+</div>
 </form>
 </div>
 <div>
-<div class="section-head"><h2>Auf einen Blick</h2></div>
-<div class="card icon-card" style="margin-bottom:var(--space-md);"><div class="icon-card-icon">📧</div><div class="icon-card-body"><h3 class="h4">E-Mail</h3><a class="link" href="mailto:mukasi@gmx.net" style="font-size:.95rem;">mukasi@gmx.net</a></div></div>
-<div class="card icon-card" style="margin-bottom:var(--space-md);"><div class="icon-card-icon">🎵</div><div class="icon-card-body"><h3 class="h4">Proben</h3><p class="muted small">Freitag · 20:00 Uhr · Simmerberg</p></div></div>
-<div class="card icon-card"><div class="icon-card-icon">📍</div><div class="icon-card-body"><h3 class="h4">Standort</h3><p class="muted small">Simmerberg im Allgäu</p></div></div>
+<div class="section-head">
+<h2>Auf einen Blick</h2>
+</div>
+<div class="card icon-card" style="margin-bottom:var(--space-md);">
+<div class="icon-card-icon">📧</div>
+<div class="icon-card-body">
+<h3 class="h4">E-Mail</h3>
+<a class="link" href="mailto:mukasi@gmx.net" style="font-size:.95rem;">mukasi@gmx.net</a>
+</div>
+</div>
+<div class="card icon-card" style="margin-bottom:var(--space-md);">
+<div class="icon-card-icon">🎵</div>
+<div class="icon-card-body">
+<h3 class="h4">Proben</h3>
+<p class="muted small">Freitag · 20:00 Uhr · Simmerberg</p>
+</div>
+</div>
+<div class="card icon-card">
+<div class="icon-card-icon">📍</div>
+<div class="icon-card-body">
+<h3 class="h4">Standort</h3>
+<p class="muted small">Simmerberg im Allgäu</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 </section>
 </main>
 <footer class="site-footer">
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<img src="assets/img/notenschluessel.png" alt="" class="footer-logo" aria-hidden="true"/>
-<div class="footer-title">Musikkapelle Simmerberg</div>
-<div class="footer-sub">MUKASI · Simmerberg</div>
-<div class="footer-legal">
-<a class="footer-pill" href="impressum.html">Impressum</a>
-<a class="footer-pill" href="datenschutz.html">Datenschutz</a>
-</div>
-</div>
-<div class="footer-links">
-<div class="footer-col">
-<div class="footer-heading">Navigation</div>
-<a href="index.html">Start</a>
-<a href="termine.html">Termine</a>
-<a href="naeaaexxt-fescht.html">Näääxt Fescht</a>
-<a href="kontakt.html">Kontakt</a>
-</div>
-<div class="footer-col">
-<div class="footer-heading">Kontakt</div>
-<a href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
-<div class="footer-meta">Proben: Freitag · 20:00 Uhr</div>
-<div class="footer-meta">Ort: Simmerberg</div>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
-<span class="footer-bottom-right">Blasmusik für jung & alt</span>
-</div>
-</div>
-</footer>
-<script defer src="assets/js/main.v2.js?v2.0"></script>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/notenschluessel.png" alt="" class="footer-logo" aria-hidden="true"/>
+          <div class="footer-title">Musikkapelle Simmerberg</div>
+          <div class="footer-sub">MUKASI · Simmerberg</div>
+          <div class="footer-legal">
+            <a class="footer-pill" href="impressum.html">Impressum</a>
+            <a class="footer-pill" href="datenschutz.html">Datenschutz</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-heading">Navigation</div>
+            <a href="index.html">Start</a>
+            <a href="termine.html">Termine</a>
+            <a href="naaaxt-fescht.html">Näääxt Fescht</a>
+            <a href="kontakt.html">Kontakt</a>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-heading">Kontakt</div>
+            <a class="footer-link" href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
+            <div class="footer-meta">Proben: Freitag · 20:00 Uhr</div>
+            <div class="footer-meta">Ort: Simmerberg</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
+        <span class="footer-bottom-right">Blasmusik für jung & alt</span>
+      </div>
+    </div>
+  </footer>
+<script src="assets/data/termine.v26.js"></script>
+<script defer="" src="assets/js/main.modern.js?v4.2"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.getElementById('kontakt-form');
+  var status = document.querySelector('[data-form-status]');
+  if (!form || !status) return;
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Simple validation
+    var name = form.querySelector('[name="name"]');
+    var email = form.querySelector('[name="email"]');
+    var message = form.querySelector('[name="message"]');
+    var privacy = form.querySelector('[name="privacy"]');
+
+    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+      status.textContent = 'Bitte fülle alle Pflichtfelder aus.';
+      status.style.color = '#b71c1c';
+      return;
+    }
+    if (!privacy.checked) {
+      status.textContent = 'Bitte stimme den Datenschutzhinweisen zu.';
+      status.style.color = '#b71c1c';
+      return;
+    }
+
+    var btn = form.querySelector('[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet…';
+    status.textContent = '';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res) {
+      if (res.ok) {
+        status.textContent = 'Vielen Dank! Deine Nachricht wurde gesendet.';
+        status.style.color = '#2e7d32';
+        form.reset();
+      } else {
+        status.textContent = 'Fehler beim Senden. Bitte versuche es erneut oder schreib direkt an mukasi@gmx.net';
+        status.style.color = '#b71c1c';
+      }
+    }).catch(function() {
+      status.textContent = 'Netzwerkfehler. Bitte versuche es später erneut.';
+      status.style.color = '#b71c1c';
+    }).finally(function() {
+      btn.disabled = false;
+      btn.textContent = 'Absenden';
+    });
+  });
+});
+</script>
 </body>
 </html>
