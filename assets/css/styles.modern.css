@@ -504,7 +504,7 @@ select.input{cursor:pointer}
 main{position:relative}
 
 /* ── Decorative Watermark (subpages only) ── */
-body:not(.home)::after{content:'';position:fixed;top:50%;right:5%;transform:translateY(-50%);width:350px;height:800px;background:url('../img/notenschluessel.png') no-repeat center/contain;opacity:.04;pointer-events:none;z-index:0}
+body:not(.home)::after{content:'';position:fixed;top:50%;right:5%;transform:translateY(-50%);width:350px;height:800px;background:url('../img/notenschluessel.png') no-repeat center/contain;opacity:.04;pointer-events:none;z-index:-1}
 .kicker{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:var(--color-primary);margin-bottom:var(--space-xs);display:flex;align-items:center;gap:.6rem}
 .kicker::before{content:'';width:24px;height:2.5px;background:var(--color-primary);border-radius:2px;flex-shrink:0}
 
