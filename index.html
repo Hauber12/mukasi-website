@@ -86,56 +86,34 @@
 
 
 
+<style>
+.hero-fullscreen{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:0}
+.hero-fullscreen::before{content:'';position:absolute;inset:0;background:url('assets/img/gruppenfoto.jpg') center/cover no-repeat;z-index:0}
+.hero-fullscreen::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.55) 100%);z-index:1}
+.hero-fullscreen .hero-content{position:relative;z-index:2;max-width:800px;padding:var(--space-xl);animation:fadeInUp .8s var(--ease-out)}
+.hero-fullscreen .hero-overline{font-family:'Source Sans 3',sans-serif;font-size:.85rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:var(--space-sm)}
+.hero-fullscreen .hero-overline::before,.hero-fullscreen .hero-overline::after{content:'—';margin:0 .5em;opacity:.5}
+.hero-fullscreen h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6vw,4.5rem);color:#fff;line-height:1.1;margin-bottom:var(--space-md);text-shadow:0 2px 12px rgba(0,0,0,.3)}
+.hero-fullscreen .hero-sub{font-family:'Source Sans 3',sans-serif;font-size:clamp(1rem,1.8vw,1.25rem);color:rgba(255,255,255,.9);max-width:600px;margin:0 auto var(--space-xl);line-height:1.6}
+.hero-fullscreen .hero-buttons{display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap}
+.hero-fullscreen .btn-hero-primary{background:var(--color-primary);color:#fff;padding:.85rem 2rem;border-radius:var(--radius-md);font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s,transform .2s;border:2px solid var(--color-primary)}
+.hero-fullscreen .btn-hero-primary:hover{background:var(--color-primary-dark);transform:translateY(-1px)}
+.hero-fullscreen .btn-hero-secondary{background:transparent;color:#fff;padding:.85rem 2rem;border-radius:var(--radius-md);font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s,transform .2s;border:2px solid rgba(255,255,255,.7)}
+.hero-fullscreen .btn-hero-secondary:hover{background:rgba(255,255,255,.15);transform:translateY(-1px)}
+</style>
 <main id="main">
 <!-- HERO -->
-<section class="hero hero--event">
-<div aria-hidden="true" class="hero-bg"></div>
-<div aria-hidden="true" class="hero-photo"></div>
-<div class="container hero-grid">
-<div class="hero-copy">
-<p class="eyebrow">Die Blasmusik für Jung &amp; Alt</p>
-<h1>Musikkapelle Simmerberg e.V.</h1>
-<p class="lead">
-            Musik. Gemeinschaft. Tradition. – wir freuen uns, dich auf unserer Website zu begrüßen.
-          </p>
-<div class="actions">
-<a class="btn btn-primary" href="termine.html">Zu den Terminen</a>
-<a class="btn btn-secondary" href="jugend.html">Jugend &amp; Ausbildung</a>
-</div>
-<div class="card" style="margin-top:16px; border-left:4px solid rgba(181,18,23,.55);">
-<p style="margin:0; font-weight:700;">„Gemeinsam spielen. Gemeinsam feiern. Gemeinsam Simmerberg."</p>
-<p class="muted small" style="margin:6px 0 0;">— Musikkapelle Simmerberg</p>
-</div>
-<dl aria-label="Kurzinfos" class="hero-stats">
-<div class="stat">
-<dt>Proben</dt>
-<dd>Freitag · 20:00 Uhr</dd>
-</div>
-<div class="stat">
-<dt>Ort</dt>
-<dd>Simmerberg</dd>
-</div>
-<div class="stat">
-<dt>Anfragen</dt>
-<dd><a href="kontakt.html">Kontakt</a></dd>
-</div>
-</dl>
-</div>
-<div aria-label="Näääxxt Fescht Teaser" class="hero-card hero-card--flyer" role="region">
-<div class="flyer-frame">
-<img alt="Flyer Näääxxt Fescht 9.0" loading="lazy" src="assets/img/flyer-nf9.png"/>
-</div>
-<div class="badge badge--hot">Näääxxt Fescht 9.0</div>
-<div>
-<h2 class="h3" style="margin-bottom:.25rem;">08. – 10. Mai 2025</h2>
-<p class="muted small" style="margin:0;">3 Tage Party im Festzelt Simmerberg</p>
-</div>
-<div class="actions">
-<a class="btn btn-primary btn-small" href="naeaaexxt-fescht.html">Infos &amp; Programm</a>
-<a class="btn btn-ghost btn-small" href="vergangenens.html">Alle Feschte</a>
+<section class="hero-fullscreen">
+<div class="hero-content">
+<p class="hero-overline">Musikkapelle Simmerberg e.V.</p>
+<h1>Blasmusik mit Herz &amp; Leidenschaft</h1>
+<p class="hero-sub">Von traditionellen Märschen bis modernen Arrangements – wir sind rund 30 Musikantinnen und Musikanten, die mit Freude zusammen musizieren.</p>
+<div class="hero-buttons">
+<a class="btn-hero-primary" href="termine.html">Termine ansehen</a>
+<a class="btn-hero-secondary" href="kontakt.html">Mitmachen</a>
 </div>
 </div>
-</div>
+</section>
 <section class="section">
 <div class="container">
 <div class="section-head">
@@ -160,7 +138,6 @@
 </article>
 </div>
 </div>
-</section>
 </section>
 <!-- NÄCHSTE TERMINE -->
 <section class="section">
