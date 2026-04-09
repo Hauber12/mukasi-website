@@ -10,13 +10,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="preload" href="assets/css/styles.modern.css?v4.2" as="style">
+  <link rel="preload" href="assets/css/styles.modern.css?v5.0" as="style">
   <link rel="preload" href="assets/img/notenschluessel.png" as="image">
   
 <title>Musikkapelle — Musikkapelle Simmerberg</title>
 <meta content="#ffffff" name="theme-color"/>
 <meta content="Informationen rund um die Musikkapelle." name="description">
-<link href="assets/css/styles.modern.css?v4.2" rel="stylesheet"/>
+<link href="assets/css/styles.modern.css?v5.0" rel="stylesheet"/>
 </meta></meta></head>
 <body>
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
@@ -102,43 +102,56 @@
 </section>
 <section class="section">
 <div class="container">
-<div class="grid grid-2">
-<article class="card icon-card">
-<div class="icon-card-icon">👥</div>
-<div class="icon-card-body">
-<h2 class="h4">Vorstandschaft</h2>
-<p class="muted small">Das Team hinter der Kapelle – von der musikalischen Leitung bis zur Organisation.</p>
-<a class="link" href="vorstandschaft.html">Zur Vorstandschaft</a>
+<style>
+.img-card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-lg)}
+@media(max-width:768px){.img-card-grid{grid-template-columns:1fr}}
+.img-card{border-radius:var(--radius-lg);overflow:hidden;background:var(--color-primary);position:relative;transition:transform .3s,box-shadow .3s;text-decoration:none;display:block}
+.img-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.18)}
+.img-card-photo{height:200px;overflow:hidden}
+.img-card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.img-card:hover .img-card-photo img{transform:scale(1.05)}
+.img-card-body{padding:var(--space-lg);color:#fff}
+.img-card-body h2{color:#fff;font-size:1.2rem;margin-bottom:var(--space-xs)}
+.img-card-body p{color:rgba(255,255,255,.8);font-size:.9rem;margin-bottom:var(--space-sm)}
+.img-card-btn{display:inline-block;padding:.5rem 1.2rem;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);border-radius:var(--radius-md);color:#fff;font-size:.85rem;font-weight:600;transition:background .2s}
+.img-card:hover .img-card-btn{background:rgba(255,255,255,.3)}
+</style>
+<div class="img-card-grid">
+<a class="img-card" href="vorstandschaft.html">
+<div class="img-card-photo"><img alt="Vorstandschaft" loading="lazy" src="assets/img/gruppenfoto.jpg"/></div>
+<div class="img-card-body">
+<h2>Vorstandschaft</h2>
+<p>Das Team hinter der Kapelle – von der musikalischen Leitung bis zur Organisation.</p>
+<span class="img-card-btn">Zur Vorstandschaft →</span>
 </div>
-</article>
-<article class="card icon-card">
-<div class="icon-card-icon">🎵</div>
-<div class="icon-card-body">
-<h2 class="h4">Register</h2>
-<p class="muted small">Von Holz über Blech bis Schlagwerk – ein Überblick über unsere Besetzung.</p>
-<a class="link" href="register.html">Zu den Registern</a>
+</a>
+<a class="img-card" href="register.html">
+<div class="img-card-photo"><img alt="Register" loading="lazy" src="assets/img/festumzug.jpg"/></div>
+<div class="img-card-body">
+<h2>Register</h2>
+<p>Von Holz über Blech bis Schlagwerk – ein Überblick über unsere Besetzung.</p>
+<span class="img-card-btn">Zu den Registern →</span>
 </div>
-</article>
-<article class="card icon-card">
-<div class="icon-card-icon">📜</div>
-<div class="icon-card-body">
-<h2 class="h4">Verein im Wandel</h2>
-<p class="muted small">Unsere Chronik von der Gründung 1886 bis heute.</p>
-<a class="link" href="verein-im-wandel.html">Zur Chronik</a>
+</a>
+<a class="img-card" href="verein-im-wandel.html">
+<div class="img-card-photo"><img alt="Verein im Wandel" loading="lazy" src="assets/img/musikkapelle-2.jpg"/></div>
+<div class="img-card-body">
+<h2>Verein im Wandel</h2>
+<p>Unsere Chronik von der Gründung 1886 bis heute.</p>
+<span class="img-card-btn">Zur Chronik →</span>
 </div>
-</article>
-<article class="card icon-card">
-<div class="icon-card-icon">🏅</div>
-<div class="icon-card-body">
-<h2 class="h4">Ehrenmitglieder</h2>
-<p class="muted small">Dank an alle, die unsere Kapelle über Jahrzehnte geprägt haben.</p>
-<a class="link" href="ehrenmitglieder.html">Zu den Ehrenmitgliedern</a>
+</a>
+<a class="img-card" href="ehrenmitglieder.html">
+<div class="img-card-photo"><img alt="Ehrenmitglieder" loading="lazy" src="assets/img/ehrenmitglieder.jpg"/></div>
+<div class="img-card-body">
+<h2>Ehrenmitglieder</h2>
+<p>Dank an alle, die unsere Kapelle über Jahrzehnte geprägt haben.</p>
+<span class="img-card-btn">Zu den Ehrenmitgliedern →</span>
 </div>
-</article>
+</a>
 </div>
 </div>
-</section>
-</main>
+</section></main>
 <footer class="site-footer-new">
 <div class="container">
 <div class="footer-top-new">
@@ -184,6 +197,6 @@
 </div>
 </footer>
 <script src="assets/data/termine.v26.js"></script>
-<script defer="" src="assets/js/main.modern.js?v4.2"></script>
+<script defer="" src="assets/js/main.modern.js?v5.0"></script>
 </body>
 </html>
