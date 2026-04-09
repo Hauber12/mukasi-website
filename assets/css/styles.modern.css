@@ -694,3 +694,30 @@ body:not(.home)::after{content:'';position:fixed;top:50%;right:5%;transform:tran
 .footer-legal-new a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
 .footer-legal-new a:hover{color:#fff}
 .footer-dot{margin:0 .4em}
+
+/* Termine list rows */
+.ev-row{display:grid;grid-template-columns:56px 12px 1fr auto;gap:0 var(--space-md);align-items:center;padding:var(--space-md) 0;border-bottom:1px solid var(--color-border);cursor:pointer;transition:background .2s}
+.ev-row:hover{background:rgba(139,26,26,.03)}
+.ev-row--past{opacity:.4}
+.ev-row--past:hover{opacity:.6}
+.ev-row-date{text-align:right;line-height:1.1}
+.ev-row-day{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--color-secondary);display:block}
+.ev-row-monthday{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted)}
+.ev-row-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.ev-dot--auftritt{background:var(--color-primary)}
+.ev-dot--konzert{background:#2c2c2c}
+.ev-dot--verein{background:#9a7209}
+.ev-row-info{min-width:0}
+.ev-row-title{font-weight:600;font-size:1rem;color:var(--color-secondary);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev-row-detail{font-size:.82rem;color:var(--color-text-muted);display:block;margin-top:1px}
+.ev-row-type{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.25rem .6rem;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.ev-type--auftritt{background:rgba(139,26,26,.08);color:var(--color-primary)}
+.ev-type--konzert{background:rgba(28,25,23,.07);color:var(--color-text)}
+.ev-type--verein{background:rgba(154,114,9,.1);color:#9a7209}
+@media(max-width:640px){
+  .ev-row{grid-template-columns:44px 8px 1fr;gap:0 var(--space-sm);padding:var(--space-sm) 0}
+  .ev-row-type{display:none}
+  .ev-row-day{font-size:1.2rem}
+  .ev-row-title{font-size:.9rem}
+  .ev-row-detail{font-size:.75rem}
+}
