@@ -115,142 +115,101 @@
 </div>
 </section>
 <style>
-.welcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg)}
-@media(max-width:768px){.welcome-grid{grid-template-columns:1fr}}
-.welcome-card{background:#fff;border-radius:var(--radius-lg);padding:var(--space-xl) var(--space-lg);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
-.welcome-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
-.welcome-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--color-primary);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
-.welcome-icon{width:48px;height:48px;border-radius:50%;background:rgba(139,26,26,.08);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:var(--space-md)}
-.welcome-card h3{margin-bottom:var(--space-xs)}
-.welcome-card p{margin-bottom:var(--space-md)}
+/* --- Welcome + Eindrücke combined --- */
+.intro-band{background:var(--color-primary);color:#fff;padding:var(--space-2xl) 0}
+.intro-band h2{color:#fff;font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.intro-band .eyebrow{color:rgba(255,255,255,.7)}
+.intro-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-lg);margin-top:var(--space-xl);text-align:center}
+@media(max-width:640px){.intro-stats{grid-template-columns:repeat(2,1fr)}}
+.intro-stat-num{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1}
+.intro-stat-label{font-size:.9rem;opacity:.8;margin-top:4px}
+
+.mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:var(--space-md);margin-top:var(--space-xl)}
+@media(max-width:768px){.mosaic{grid-template-columns:1fr}}
+.mosaic-img{border-radius:var(--radius-lg);overflow:hidden;position:relative}
+.mosaic-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.mosaic-img:hover img{transform:scale(1.03)}
+.mosaic-img.tall{grid-row:1/3}
+@media(max-width:768px){.mosaic-img.tall{grid-row:auto}}
+.mosaic-caption{position:absolute;bottom:0;left:0;right:0;padding:var(--space-sm) var(--space-md);background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:.85rem;font-weight:600}
+
+.feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);margin-top:var(--space-xl)}
+@media(max-width:768px){.feature-row{grid-template-columns:1fr}}
+.feature-item{text-align:center;padding:var(--space-lg)}
+.feature-item svg{width:40px;height:40px;margin-bottom:var(--space-sm);color:var(--color-primary)}
+.feature-item h3{margin-bottom:var(--space-xs);font-size:1.1rem}
+.feature-item p{font-size:.92rem}
+.feature-item a{font-weight:600;color:var(--color-primary)}
 </style>
-<section class="section">
+
+<!-- ZAHLEN-BAND -->
+<section class="intro-band">
 <div class="container">
-<div class="section-head">
-<h2>Herzlich willkommen</h2>
-<a class="link" href="ueber-uns.html">Mehr über uns</a>
+<p class="eyebrow" style="text-align:center">♪ Musikkapelle Simmerberg e.V.</p>
+<h2 style="text-align:center">Blasmusik seit Generationen</h2>
+<div class="intro-stats">
+<div>
+<div class="intro-stat-num">~30</div>
+<div class="intro-stat-label">Musikant:innen</div>
 </div>
-<div class="welcome-grid">
-<article class="welcome-card">
-<div class="welcome-icon">🎵</div>
-<h3 class="h4">Wer sind wir?</h3>
-<p class="muted">Eine Musikkapelle mit Freude an traditioneller und moderner Blasmusik – im Dorfleben genauso wie auf Festen.</p>
-<a class="link" href="ueber-uns.html">Weiterlesen →</a>
-</article>
-<article class="welcome-card">
-<div class="welcome-icon">🎺</div>
-<h3 class="h4">Unsere Jugend</h3>
-<p class="muted">Ausbildung, Förderung und die Jugendkapelle „Weschtallgaier Notenchaos“ – Nachwuchs ist uns wichtig.</p>
-<a class="link" href="jugend.html">Zur Jugend →</a>
-</article>
-<article class="welcome-card">
-<div class="welcome-icon">🤝</div>
-<h3 class="h4">Mitglied werden</h3>
-<p class="muted">Ob aktiv oder passiv – wir freuen uns über neue Gesichter und Unterstützer.</p>
-<a class="link" href="kontakt.html">Mitmachen →</a>
-</article>
+<div>
+<div class="intro-stat-num">100+</div>
+<div class="intro-stat-label">Jahre Tradition</div>
+</div>
+<div>
+<div class="intro-stat-num">5+</div>
+<div class="intro-stat-label">Auftritte / Jahr</div>
+</div>
+<div>
+<div class="intro-stat-num">1</div>
+<div class="intro-stat-label">Jugendkapelle</div>
+</div>
 </div>
 </div>
 </section>
-<!-- NÄCHSTE TERMINE -->
+
+<!-- BILDER-MOSAIK + FEATURES -->
 <section class="section">
 <div class="container">
 <div class="section-head">
 <h2>Eindrücke</h2>
 <a class="link" href="verein-im-wandel.html">Unser Verein</a>
 </div>
-<div class="about-image-section">
-<div class="about-image-frame">
-<img alt="Gruppenfoto der Musikkapelle Simmerberg" loading="lazy" src="assets/img/gruppenfoto.jpg"/>
-</div>
-<div class="about-text">
-<p class="eyebrow">Unsere Kapelle</p>
-<h2>Gemeinsam stark</h2>
-<p class="muted">Ob bei Festumzügen, im Festzelt oder bei Konzerten – unsere Musikkapelle ist überall mit Freude und Leidenschaft dabei. Musik verbindet uns seit Generationen.</p>
-<a class="btn btn-primary" href="ueber-uns.html" style="margin-top:var(--space-sm);">Mehr über uns</a>
-</div>
-</div>
-<div class="photo-showcase">
-<div class="photo-showcase-item">
-<img alt="Festzelt-Stimmung mit der Musikkapelle Simmerberg" loading="lazy" src="assets/img/festzelt.jpg"/>
-<div class="photo-showcase-caption">Feststimmung im Festzelt</div>
-</div>
-<div class="photo-showcase-item">
+<div class="mosaic">
+<div class="mosaic-img tall">
 <img alt="Festumzug der Musikkapelle Simmerberg" loading="lazy" src="assets/img/festumzug.jpg"/>
-<div class="photo-showcase-caption">Festumzug mit Fahne und Tracht</div>
+<div class="mosaic-caption">Festumzug mit Fahne und Tracht</div>
+</div>
+<div class="mosaic-img">
+<img alt="Festzelt-Stimmung" loading="lazy" src="assets/img/festzelt.jpg"/>
+<div class="mosaic-caption">Feststimmung im Festzelt</div>
+</div>
+<div class="mosaic-img">
+<img alt="Gruppenfoto Musikkapelle Simmerberg" loading="lazy" src="assets/img/gruppenfoto.jpg"/>
+<div class="mosaic-caption">Unsere Kapelle</div>
+</div>
+</div>
+
+<div class="feature-row">
+<div class="feature-item">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z"/></svg>
+<h3 class="h4">Wer sind wir?</h3>
+<p class="muted">Traditionelle und moderne Blasmusik – im Dorfleben genauso wie auf Festen.</p>
+<a class="link" href="ueber-uns.html">Weiterlesen →</a>
+</div>
+<div class="feature-item">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
+<h3 class="h4">Unsere Jugend</h3>
+<p class="muted">Die Jugendkapelle „Weschtallgaier Notenchaos“ – Nachwuchs ist uns wichtig.</p>
+<a class="link" href="jugend.html">Zur Jugend →</a>
+</div>
+<div class="feature-item">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/></svg>
+<h3 class="h4">Mitglied werden</h3>
+<p class="muted">Ob aktiv oder passiv – wir freuen uns über neue Gesichter.</p>
+<a class="link" href="kontakt.html">Mitmachen →</a>
 </div>
 </div>
 </div>
 </section>
-<!-- NÄCHSTE TERMINE -->
-<section class="section section-alt page-tint">
-<div class="container">
-<div class="section-head">
-<h2>Nächste Termine</h2>
-<a class="link" href="termine.html">Alle anzeigen</a>
-</div>
-<div class="next-grid" data-next-events="">
-<div class="empty-state" style="padding:18px;">
-<strong>Nächste Termine werden geladen…</strong>
-<p class="muted small" style="margin:6px 0 0;">Falls hier nichts erscheint, sind momentan keine Termine vorhanden.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA -->
-<section class="section section-cta">
-<div class="container cta">
-<div>
-<h2>Du hast Fragen oder willst mitspielen?</h2>
-<p class="muted">
-            Schreib uns kurz – wir melden uns zeitnah.
-          </p>
-</div>
-<div class="actions">
-<a class="btn btn-primary" href="kontakt.html">Kontakt</a>
-</div>
-</div>
-</section>
-<script id="next-events-data" type="application/json">[{"title": "Kinderfasching Simmerberg", "date": "2026-02-01T13:13", "type": "verein", "location": "Simmerberg", "notes": ""}, {"title": "Generalversammlung", "date": "2026-03-06T19:30", "type": "verein", "location": "Krone (Simmerberg)", "notes": ""}, {"title": "Spieleabend", "date": "2026-04-25T19:00", "type": "verein", "location": "Krone (Simmerberg)", "notes": ""}]</script>
-</main>
-<footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/img/notenschluessel.png" alt="" class="footer-logo" aria-hidden="true"/>
-          <div class="footer-title">Musikkapelle Simmerberg</div>
-          <div class="footer-sub">MUKASI · Simmerberg</div>
-          <div class="footer-legal">
-            <a class="footer-pill" href="impressum.html">Impressum</a>
-            <a class="footer-pill" href="datenschutz.html">Datenschutz</a>
-          </div>
-        </div>
 
-        <div class="footer-links">
-          <div class="footer-col">
-            <div class="footer-heading">Navigation</div>
-            <a href="index.html">Start</a>
-            <a href="termine.html">Termine</a>
-            <a href="naaaxt-fescht.html">Näääxt Fescht</a>
-            <a href="kontakt.html">Kontakt</a>
-          </div>
-
-          <div class="footer-col">
-            <div class="footer-heading">Kontakt</div>
-            <a class="footer-link" href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
-            <div class="footer-meta">Proben: Freitag · 20:00 Uhr</div>
-            <div class="footer-meta">Ort: Simmerberg</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
-        <span class="footer-bottom-right">Blasmusik für jung & alt</span>
-      </div>
-    </div>
-  </footer>
-<script src="assets/data/termine.v26.js"></script>
-<script defer="" src="assets/js/main.modern.js?v4.2"></script>
-</body>
-</html>
