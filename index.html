@@ -7,7 +7,7 @@
   <meta name="supported-color-schemes" content="light">
 <meta content="width=device-width, initial-scale=1" name="viewport">
   <!-- Preload critical assets -->
-  <link rel="preload" href="assets/css/styles.modern.css?v5.0" as="style">
+  <link rel="preload" href="assets/css/styles.modern.css?v6.0" as="style">
   <link rel="preload" href="assets/img/notenschluessel.png" as="image">
   
 <title>MUKASI — Musikkapelle Simmerberg</title>
@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
-<link href="assets/css/styles.modern.css?v5.0" rel="stylesheet"/>
+<link href="assets/css/styles.modern.css?v6.0" rel="stylesheet"/>
 </meta>
 </head>
 <body class="home">
@@ -101,6 +101,32 @@
 .hero-fullscreen .btn-hero-primary:hover{background:var(--color-primary-dark);transform:translateY(-1px)}
 .hero-fullscreen .btn-hero-secondary{background:transparent;color:#fff;padding:.85rem 2rem;border-radius:var(--radius-md);font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s,transform .2s;border:2px solid rgba(255,255,255,.7)}
 .hero-fullscreen .btn-hero-secondary:hover{background:rgba(255,255,255,.15);transform:translateY(-1px)}
+
+/* CTA Section */
+.cta-new{position:relative;padding:var(--space-2xl) 0;text-align:center;overflow:hidden;color:#fff}
+.cta-new-bg{position:absolute;inset:0;background:url('assets/img/mosaik-spielen.jpg') center/cover;z-index:0}
+.cta-new-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,26,26,.88),rgba(30,15,15,.92))}
+.cta-new-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.cta-new h2{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:var(--space-md)}
+.cta-new p{color:rgba(255,255,255,.85);font-size:1.1rem;line-height:1.6;margin-bottom:var(--space-lg)}
+.cta-new-buttons{display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-xl)}
+.cta-new-info{display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap;font-size:.9rem;color:rgba(255,255,255,.7)}
+@media(max-width:640px){.cta-new-info{flex-direction:column;gap:var(--space-sm)}}
+
+/* Mobile Hero */
+@media(max-width:640px){
+  .hero-fullscreen{min-height:85vh}
+  .hero-fullscreen h1{font-size:2rem}
+  .hero-fullscreen .hero-sub{font-size:.95rem}
+  .hero-fullscreen .hero-buttons{flex-direction:column;align-items:center}
+  .hero-fullscreen .btn-hero-primary,.hero-fullscreen .btn-hero-secondary{width:100%;max-width:280px;text-align:center}
+  .hero-fullscreen .hero-overline{font-size:.72rem;letter-spacing:.15em}
+  .intro-band{padding:var(--space-md) 0}
+  .intro-band h2{font-size:1.2rem}
+  .mosaic{gap:var(--space-sm)}
+  .mosaic-img{border-radius:var(--radius-md)}
+  .next-grid{grid-template-columns:1fr!important}
+}
 </style>
 <main id="main">
 <!-- HERO -->
@@ -108,7 +134,7 @@
 <div class="hero-content">
 <p class="hero-overline">Musikkapelle Simmerberg e.V.</p>
 <h1>Blasmusik mit Herz &amp; Leidenschaft</h1>
-<p class="hero-sub">Von traditionellen Märschen bis modernen Arrangements – wir sind rund 30 Musikantinnen und Musikanten, die mit Freude zusammen musizieren.</p>
+<p class="hero-sub">Von traditionellen Märschen bis modernen Arrangements – wir sind rund 50 Musikantinnen und Musikanten, die mit Freude zusammen musizieren.</p>
 <div class="hero-buttons">
 <a class="btn-hero-primary" href="termine.html">Termine ansehen</a>
 <a class="btn-hero-secondary" href="kontakt.html">Mitmachen</a>
@@ -134,13 +160,7 @@
 @media(max-width:768px){.mosaic-img.tall{grid-row:auto}}
 .mosaic-caption{position:absolute;bottom:0;left:0;right:0;padding:var(--space-sm) var(--space-md);background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:.85rem;font-weight:600}
 
-.feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);margin-top:var(--space-xl)}
-@media(max-width:768px){.feature-row{grid-template-columns:1fr}}
-.feature-item{text-align:center;padding:var(--space-lg)}
-.feature-item svg{width:40px;height:40px;margin-bottom:var(--space-sm);color:var(--color-primary)}
-.feature-item h3{margin-bottom:var(--space-xs);font-size:1.1rem}
-.feature-item p{font-size:.92rem}
-.feature-item a{font-weight:600;color:var(--color-primary)}
+
 </style>
 
 <!-- ZAHLEN-BAND -->
@@ -187,26 +207,6 @@
 </div>
 </div>
 
-<div class="feature-row">
-<div class="feature-item">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z"/></svg>
-<h3 class="h4">Wer sind wir?</h3>
-<p class="muted">Traditionelle und moderne Blasmusik – im Dorfleben genauso wie auf Festen.</p>
-<a class="link" href="ueber-uns.html">Weiterlesen →</a>
-</div>
-<div class="feature-item">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
-<h3 class="h4">Unsere Jugend</h3>
-<p class="muted">Die Jugendkapelle „Weschtallgaier Notenchaos“ – Nachwuchs ist uns wichtig.</p>
-<a class="link" href="jugend.html">Zur Jugend →</a>
-</div>
-<div class="feature-item">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"/></svg>
-<h3 class="h4">Mitglied werden</h3>
-<p class="muted">Ob aktiv oder passiv – wir freuen uns über neue Gesichter.</p>
-<a class="link" href="kontakt.html">Mitmachen →</a>
-</div>
-</div>
 </div>
 </section>
 <!-- NÄCHSTE TERMINE -->
@@ -225,20 +225,23 @@
 </div>
 </section>
 <!-- CTA -->
-<section class="section section-cta">
-<div class="container cta">
-<div>
-<h2>Du hast Fragen oder willst mitspielen?</h2>
-<p class="muted">
-            Schreib uns kurz – wir melden uns zeitnah.
-          </p>
+<section class="cta-new">
+<div class="cta-new-bg"></div>
+<div class="container cta-new-inner">
+<h2>Lust auf Blasmusik?</h2>
+<p>Ob aktiv mitspielen, als Jungmusikant starten oder den Verein unterstützen – wir freuen uns auf dich!</p>
+<div class="cta-new-buttons">
+<a class="btn-hero-primary" href="kontakt.html">Schreib uns</a>
+<a class="btn-hero-secondary" href="jugend.html">Jugend &amp; Ausbildung</a>
 </div>
-<div class="actions">
-<a class="btn btn-primary" href="kontakt.html">Kontakt</a>
+<div class="cta-new-info">
+<span>📍 Simmerberg im Allgäu</span>
+<span>🎵 Proben: Freitag · 20:00 Uhr</span>
+<span>✉️ mukasi@gmx.net</span>
 </div>
 </div>
 </section>
-<script id="next-events-data" type="application/json">[{"title": "Kinderfasching Simmerberg", "date": "2026-02-01T13:13", "type": "verein", "location": "Simmerberg", "notes": ""}, {"title": "Generalversammlung", "date": "2026-03-06T19:30", "type": "verein", "location": "Krone (Simmerberg)", "notes": ""}, {"title": "Spieleabend", "date": "2026-04-25T19:00", "type": "verein", "location": "Krone (Simmerberg)", "notes": ""}]</script>
+<script id="next-events-data" type="application/json">[{"title": "Spieleabend", "date": "2026-04-25T19:00", "type": "verein", "location": "Krone (Simmerberg)", "notes": ""}, {"title": "Maibaum aufstellen", "date": "2026-05-01T00:00", "type": "auftritt", "location": "Simmerberg", "notes": ""}, {"title": "Heilige Kommunion", "date": "2026-05-03T10:15", "type": "auftritt", "location": "Simmerberg", "notes": ""}, {"title": "1. Standkonzert", "date": "2026-05-20T19:30", "type": "auftritt", "location": "Simmerberg", "notes": "mit Trachtenverein"}]</script>
 </main>
 <footer class="site-footer-new">
 <div class="container">
@@ -285,6 +288,6 @@
 </div>
 </footer>
 <script src="assets/data/termine.v26.js"></script>
-<script defer="" src="assets/js/main.modern.js?v5.0"></script>
+<script defer="" src="assets/js/main.modern.js?v6.0"></script>
 </body>
 </html>
