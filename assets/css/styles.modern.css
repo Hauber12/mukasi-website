@@ -426,7 +426,9 @@ select.input{cursor:pointer}
    NEXT EVENTS (Homepage)
    ═══════════════════════════════════════ */
 .next-grid{display:grid;gap:var(--space-md)}
-.event-card{background:white;border-radius:var(--radius-lg);padding:0;box-shadow:var(--shadow-card);transition:all .35s var(--ease-out);position:relative;overflow:hidden;cursor:pointer;display:grid;grid-template-columns:90px 1fr;border:1px solid var(--color-border)}
+.event-card{background:white;border-radius:var(--radius-lg);padding:0;box-shadow:var(--shadow-card);transition:all .35s var(--ease-out);position:relative;overflow:hidden;cursor:pointer;display:grid;grid-template-columns:90px 1fr;grid-template-rows:auto;border:1px solid var(--color-border)}
+.event-card>*{grid-column:2}
+.event-card>.event-date{grid-column:1;grid-row:1/-1}
 .event-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:90px;background:var(--color-primary);z-index:0}
 .event-card:hover{box-shadow:var(--shadow-card-hover);transform:translateY(-3px)}
 
