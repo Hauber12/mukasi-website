@@ -19,7 +19,7 @@
 </meta>
 </head>
 <body class="home">
-<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<a class="skip-link" href="#main" style="position:absolute;top:-100px;left:0;z-index:9999;background:var(--color-primary);color:#fff;padding:.8rem 1.5rem;border-radius:0 0 var(--radius-md) 0;transition:top .2s">Zum Inhalt springen</a>
 <header class="site-header" data-header="">
 <div class="container header-inner">
 <a aria-label="Startseite" class="brand-inline brand-inline--left" href="index.html">
@@ -126,7 +126,9 @@
   .hero-fullscreen .btn-hero-primary,.hero-fullscreen .btn-hero-secondary{width:100%;max-width:280px;text-align:center}
   .hero-fullscreen .hero-overline{font-size:.72rem;letter-spacing:.15em}
   .intro-band{padding:var(--space-md) 0}
-  .intro-band h2{font-size:1.2rem}
+  .intro-band h2{font-size:1.1rem;margin-bottom:var(--space-xs)}
+  .intro-stat-label{font-size:.75rem}
+  .section-head{flex-direction:row;align-items:baseline}
   .mosaic{gap:var(--space-sm)}
   .mosaic-img{border-radius:var(--radius-md)}
   .next-grid{grid-template-columns:1fr!important}
@@ -151,8 +153,8 @@
 .intro-band h2{color:#fff;font-size:clamp(1.4rem,2.5vw,1.8rem);margin-bottom:var(--space-sm)}
 .intro-band .eyebrow{color:rgba(255,255,255,.7)}
 .intro-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);margin-top:var(--space-md);text-align:center;max-width:700px;margin-left:auto;margin-right:auto}
-@media(max-width:640px){.intro-stats{grid-template-columns:repeat(2,1fr)}}
-.intro-stat-num{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;line-height:1}
+@media(max-width:640px){.intro-stats{grid-template-columns:repeat(3,1fr);gap:var(--space-sm)}}
+.intro-stat-num{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,2.2rem);font-weight:700;line-height:1}
 .intro-stat-label{font-size:.9rem;opacity:.8;margin-top:4px}
 
 .mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:var(--space-md);margin-top:var(--space-xl)}
