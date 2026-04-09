@@ -245,14 +245,7 @@
         // Event type badge
         const typeBadge = event.type ? `<span class="event-type-badge event-type-${event.type}">${getEventTypeLabel(event.type)}</span>` : '';
 
-        const eventImages = {
-          auftritt: 'assets/img/mosaik-festumzug.jpg',
-          konzert: 'assets/img/mosaik-spielen.jpg',
-          verein: 'assets/img/hero-gruppenfoto.jpg'
-        };
-        const eventImg = eventImages[event.type] || eventImages.verein;
         card.innerHTML = `
-          <div class="event-card-img"><img src="${eventImg}" alt="" loading="lazy"/></div>
           <div class="event-date">${formattedDate}</div>
           <h3 class="event-title">${escapeHtml(event.title)}</h3>
           <div class="event-meta">
@@ -513,14 +506,7 @@
         const showTime = formattedTime !== '00:00';
         const typeBadge = event.eventType ? `<span class="event-type-badge event-type-${event.eventType}">${getEventTypeLabel(event.eventType)}</span>` : '';
 
-        const eventImages = {
-          auftritt: 'assets/img/mosaik-festumzug.jpg',
-          konzert: 'assets/img/mosaik-spielen.jpg',
-          verein: 'assets/img/hero-gruppenfoto.jpg'
-        };
-        const eventImg = eventImages[event.eventType] || eventImages.verein;
         card.innerHTML = `
-          <div class="event-card-img"><img src="${eventImg}" alt="" loading="lazy"/></div>
           <div class="event-date">${formattedDate}</div>
           <h3 class="event-title">${escapeHtml(event.titleText)}</h3>
           <div class="event-meta">
