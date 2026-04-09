@@ -515,23 +515,20 @@
         const typeBadge = event.eventType ? `<span class="event-type-badge event-type-${event.eventType}">${getEventTypeLabel(event.eventType)}</span>` : '';
 
         const dayNum = event.dateObj.getDate();
-        const monthShort = event.dateObj.toLocaleString('de-DE', {month:'short'}).replace('.','');
-        const weekday = event.dateObj.toLocaleString('de-DE', {weekday:'short'}).replace('.','');
+        const monthShort = event.dateObj.toLocaleString('de-DE', {month:'short'});
+        const weekday = event.dateObj.toLocaleString('de-DE', {weekday:'short'});
+        card.className = 'ev-row' + (isPast ? ' ev-row--past' : '');
         card.innerHTML = `
-          <div class="ev-cal ev-cal--${event.eventType || 'verein'}">
-            <span class="ev-cal-day">${dayNum}</span>
-            <span class="ev-cal-month">${monthShort}</span>
+          <div class="ev-row-date">
+            <span class="ev-row-day">${dayNum}</span>
+            <span class="ev-row-monthday">${monthShort}</span>
           </div>
-          <div class="ev-body">
-            <div class="ev-weekdate">${weekday}, ${formattedDate}</div>
-            <h3 class="ev-title">${escapeHtml(event.titleText)}</h3>
-            <div class="ev-meta">
-              ${showTime ? `<span>🕐 ${formattedTime} Uhr</span>` : ''}
-              ${event.locationText ? `<span>📍 ${escapeHtml(event.locationText)}</span>` : ''}
-              ${event.notesText ? `<span class="ev-note">${escapeHtml(event.notesText)}</span>` : ''}
-            </div>
-            ${typeBadge}
+          <div class="ev-row-dot ev-dot--${event.eventType || 'verein'}"></div>
+          <div class="ev-row-info">
+            <span class="ev-row-title">${escapeHtml(event.titleText)}</span>
+            <span class="ev-row-detail">${showTime ? formattedTime + ' Uhr' : ''}${showTime && event.locationText ? ' · ' : ''}${event.locationText ? escapeHtml(event.locationText) : ''}${event.notesText ? ' · ' + escapeHtml(event.notesText) : ''}</span>
           </div>
+          <div class="ev-row-type ev-type--${event.eventType || 'verein'}">${getEventTypeLabel(event.eventType)}</div>
         `;
 
         card.style.cursor = 'pointer';
