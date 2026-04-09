@@ -114,27 +114,40 @@
 </div>
 </div>
 </section>
+<style>
+.welcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg)}
+@media(max-width:768px){.welcome-grid{grid-template-columns:1fr}}
+.welcome-card{background:#fff;border-radius:var(--radius-lg);padding:var(--space-xl) var(--space-lg);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden}
+.welcome-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.1)}
+.welcome-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--color-primary);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.welcome-icon{width:48px;height:48px;border-radius:50%;background:rgba(139,26,26,.08);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:var(--space-md)}
+.welcome-card h3{margin-bottom:var(--space-xs)}
+.welcome-card p{margin-bottom:var(--space-md)}
+</style>
 <section class="section">
 <div class="container">
 <div class="section-head">
 <h2>Herzlich willkommen</h2>
 <a class="link" href="ueber-uns.html">Mehr über uns</a>
 </div>
-<div class="grid grid-2">
-<article class="card">
+<div class="welcome-grid">
+<article class="welcome-card">
+<div class="welcome-icon">🎵</div>
 <h3 class="h4">Wer sind wir?</h3>
 <p class="muted">Eine Musikkapelle mit Freude an traditioneller und moderner Blasmusik – im Dorfleben genauso wie auf Festen.</p>
-<a class="link" href="ueber-uns.html">Weiterlesen</a>
+<a class="link" href="ueber-uns.html">Weiterlesen →</a>
 </article>
-<article class="card">
+<article class="welcome-card">
+<div class="welcome-icon">🎺</div>
 <h3 class="h4">Unsere Jugend</h3>
 <p class="muted">Ausbildung, Förderung und die Jugendkapelle „Weschtallgaier Notenchaos“ – Nachwuchs ist uns wichtig.</p>
-<a class="link" href="jugend.html">Zur Jugend</a>
+<a class="link" href="jugend.html">Zur Jugend →</a>
 </article>
-<article class="card">
+<article class="welcome-card">
+<div class="welcome-icon">🤝</div>
 <h3 class="h4">Mitglied werden</h3>
 <p class="muted">Ob aktiv oder passiv – wir freuen uns über neue Gesichter und Unterstützer.</p>
-<a class="link" href="kontakt.html">Mitmachen</a>
+<a class="link" href="kontakt.html">Mitmachen →</a>
 </article>
 </div>
 </div>
