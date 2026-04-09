@@ -411,4 +411,460 @@ function exportFile() {
 }
 </script>
 </body>
+</html><footer class="site-footer-new">
+<div class="container">
+<div class="footer-top-new">
+<div class="footer-brand-new">
+<img src="assets/img/notenschluessel.png" alt="" class="footer-logo-new" aria-hidden="true"/>
+<div>
+<div class="footer-name-new">Musikkapelle Simmerberg</div>
+<div class="footer-tagline-new">Blasmusik für Jung & Alt seit Generationen</div>
+</div>
+</div>
+<div class="footer-nav-new">
+<div class="footer-col-new">
+<div class="footer-heading-new">Verein</div>
+<a href="ueber-uns.html">Über uns</a>
+<a href="register.html">Register</a>
+<a href="vorstandschaft.html">Vorstandschaft</a>
+<a href="ehrenmitglieder.html">Ehrenmitglieder</a>
+</div>
+<div class="footer-col-new">
+<div class="footer-heading-new">Aktuelles</div>
+<a href="termine.html">Termine 2026</a>
+<a href="jugend.html">Jugend</a>
+<a href="foerderverein.html">Förderverein</a>
+<a href="vergangenens.html">Vergangenes</a>
+</div>
+<div class="footer-col-new">
+<div class="footer-heading-new">Kontakt</div>
+<a href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
+<span class="footer-info-new">Proben: Freitag · 20:00 Uhr</span>
+<span class="footer-info-new">Simmerberg im Allgäu</span>
+<a href="kontakt.html" class="footer-cta-new">Schreib uns →</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom-new">
+<span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
+<div class="footer-legal-new">
+<a href="impressum.html">Impressum</a>
+<span class="footer-dot">·</span>
+<a href="datenschutz.html">Datenschutz</a>
+</div>
+</div>
+</div>
+</footer>E html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MUKASI Termine Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #8b1a1a;
+  --primary-light: #b71c1c;
+  --bg: #fffbf7;
+  --bg-alt: #faf5ef;
+  --text: #1a1615;
+  --text-light: #4a4543;
+  --text-muted: #8a8380;
+  --border: #e0d8ce;
+  --radius: 12px;
+  --font-body: 'Source Sans 3', sans-serif;
+  --font-display: 'Playfair Display', serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); min-height: 100vh; }
+
+.app { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+
+.header { text-align: center; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 2px solid var(--border); }
+.header h1 { font-family: var(--font-display); font-size: 2rem; color: var(--primary); margin-bottom: 4px; }
+.header p { color: var(--text-muted); font-size: .9rem; }
+
+.toolbar { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
+.toolbar .btn { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-body); font-size: .85rem; font-weight: 700; padding: 8px 18px; border-radius: 999px; border: 2px solid transparent; cursor: pointer; transition: all .2s; }
+.btn-primary { background: var(--primary); color: white; border-color: var(--primary); }
+.btn-primary:hover { background: #5c0e0e; border-color: #5c0e0e; }
+.btn-secondary { background: white; color: var(--text); border-color: var(--border); }
+.btn-secondary:hover { border-color: var(--text-muted); background: var(--bg-alt); }
+.btn-danger { background: white; color: #c62828; border-color: #fecaca; }
+.btn-danger:hover { background: #fef2f2; border-color: #c62828; }
+.btn-success { background: #2e7d32; color: white; border-color: #2e7d32; }
+.btn-success:hover { background: #1b5e20; }
+
+.filter { display: flex; gap: 8px; margin-left: auto; align-items: center; }
+.filter select { font-family: var(--font-body); font-size: .85rem; padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px; background: white; color: var(--text); }
+
+.count { font-size: .85rem; color: var(--text-muted); margin-bottom: 16px; }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(26,22,21,.5); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.modal { background: white; border-radius: var(--radius); padding: 28px; max-width: 500px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,.15); }
+.modal h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--primary); margin-bottom: 20px; }
+.modal .field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 14px; }
+.modal label { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); }
+.modal input, .modal select, .modal textarea { font-family: var(--font-body); font-size: .95rem; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--text); }
+.modal input:focus, .modal select:focus { outline: 2px solid var(--primary); outline-offset: 1px; border-color: transparent; }
+.modal .actions { display: flex; gap: 10px; margin-top: 20px; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* Event list */
+.event-list { display: flex; flex-direction: column; gap: 6px; }
+.event-item { display: grid; grid-template-columns: 100px 1fr auto auto auto; align-items: center; gap: 12px; padding: 12px 16px; background: white; border: 1px solid var(--border); border-radius: var(--radius); transition: all .15s; }
+.event-item:hover { border-color: var(--primary); box-shadow: 0 2px 12px rgba(139,26,26,.06); }
+.event-date { font-size: .8rem; font-weight: 700; color: var(--primary); white-space: nowrap; }
+.event-title { font-weight: 600; font-size: .95rem; }
+.event-location { font-size: .8rem; color: var(--text-muted); }
+.event-type { font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 2px 8px; border-radius: 999px; background: rgba(139,26,26,.08); color: var(--primary); }
+.event-type[data-type="konzert"] { background: rgba(46,125,50,.1); color: #2e7d32; }
+.event-type[data-type="verein"] { background: rgba(21,101,192,.1); color: #1565c0; }
+.event-actions { display: flex; gap: 6px; }
+.event-actions button { background: none; border: none; cursor: pointer; font-size: 1rem; padding: 4px; border-radius: 6px; transition: background .15s; }
+.event-actions button:hover { background: var(--bg-alt); }
+
+.import-area { margin-bottom: 24px; padding: 20px; border: 2px dashed var(--border); border-radius: var(--radius); text-align: center; background: var(--bg-alt); }
+.import-area p { color: var(--text-muted); font-size: .85rem; margin-bottom: 10px; }
+
+.empty { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+
+@media (max-width: 700px) {
+  .event-item { grid-template-columns: 1fr; gap: 4px; }
+  .toolbar { flex-direction: column; }
+  .filter { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+<div id="loginScreen" style="display:flex; align-items:center; justify-content:center; min-height:100vh; padding:20px;">
+<div style="background:white; border-radius:12px; padding:36px; max-width:380px; width:100%; box-shadow:0 8px 40px rgba(0,0,0,.1); text-align:center;">
+<div style="font-family:'Playfair Display',serif; font-size:1.6rem; color:#8b1a1a; margin-bottom:4px;">MUKASI</div>
+<div style="font-size:.85rem; color:#8a8380; margin-bottom:24px;">Termine Admin-Bereich</div>
+<input type="password" id="pwInput" placeholder="Passwort eingeben" onkeydown="if(event.key==='Enter')checkPw()" style="font-family:'Source Sans 3',sans-serif; font-size:1rem; padding:10px 16px; border:1px solid #e0d8ce; border-radius:8px; width:100%; margin-bottom:12px; background:#fffbf7;"/>
+<div id="pwError" style="color:#c62828; font-size:.85rem; margin-bottom:12px; display:none;">Falsches Passwort</div>
+<button onclick="checkPw()" style="font-family:'Source Sans 3',sans-serif; font-size:.9rem; font-weight:700; padding:10px 28px; border-radius:999px; border:none; background:#8b1a1a; color:white; cursor:pointer; transition:background .2s;">Anmelden</button>
+</div>
+</div>
+<script>
+async function checkPw() {
+  const input = document.getElementById('pwInput').value;
+  if (input === atob('bXVrYXNpMTg4OSE=')) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('mainApp').style.display = 'block';
+    sessionStorage.setItem('mukasi_auth', '1');
+  } else {
+    document.getElementById('pwError').style.display = 'block';
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwInput').focus();
+  }
+}
+// Auto-login if already authenticated this session
+if (sessionStorage.getItem('mukasi_auth') === '1') {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('mainApp').style.display = 'block';
+}
+</script>
+<div class="app" id="mainApp" style="display:none;">
+<div class="header">
+<h1>MUKASI Termine</h1>
+<p>Termine verwalten, bearbeiten und als Datei exportieren</p>
+</div>
+
+<div class="import-area" id="importArea">
+<p>Aktuelle <strong>termine.v26.js</strong> hier reinziehen oder klicken zum Laden</p>
+<input type="file" id="fileInput" accept=".js,.json" style="display:none"/>
+<button class="btn btn-secondary" onclick="document.getElementById('fileInput').click()">Datei auswählen</button>
+</div>
+
+<div class="toolbar">
+<button class="btn btn-primary" onclick="openAdd()">+ Neuer Termin</button>
+<button class="btn btn-success" onclick="exportFile()">Datei exportieren</button>
+<div class="filter">
+<select id="filterYear" onchange="render()">
+<option value="all">Alle Jahre</option>
+<option value="2026">2026</option>
+<option value="2025">2025</option>
+</select>
+<select id="filterType" onchange="render()">
+<option value="all">Alle Typen</option>
+<option value="auftritt">Auftritt</option>
+<option value="konzert">Konzert</option>
+<option value="verein">Verein</option>
+</select>
+</div>
+</div>
+
+<div class="count" id="count"></div>
+<div class="event-list" id="eventList"></div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal" style="display:none" onclick="if(event.target===this)closeModal()">
+<div class="modal">
+<h2 id="modalTitle">Neuer Termin</h2>
+<div class="field">
+<label>Titel</label>
+<input id="fTitle" type="text" placeholder="z.B. Standkonzert Simmerberg"/>
+</div>
+<div class="row2">
+<div class="field">
+<label>Datum</label>
+<input id="fDate" type="date"/>
+</div>
+<div class="field">
+<label>Uhrzeit</label>
+<input id="fTime" type="time" value="00:00"/>
+</div>
+</div>
+<div class="row2">
+<div class="field">
+<label>Kategorie</label>
+<select id="fType">
+<option value="auftritt">Auftritt</option>
+<option value="konzert">Konzert</option>
+<option value="verein">Verein</option>
+</select>
+</div>
+<div class="field">
+<label>Ort</label>
+<input id="fLocation" type="text" placeholder="z.B. Simmerberg"/>
+</div>
+</div>
+<div class="field">
+<label>Notizen</label>
+<input id="fNotes" type="text" placeholder="z.B. Fahnenabordnung, mit TV"/>
+</div>
+<div class="actions">
+<button class="btn btn-primary" onclick="saveEvent()">Speichern</button>
+<button class="btn btn-secondary" onclick="closeModal()">Abbrechen</button>
+<button class="btn btn-danger" id="deleteBtn" style="display:none;margin-left:auto" onclick="deleteEvent()">Löschen</button>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+let events = [];
+let editId = null;
+let nextId = 1;
+
+function assignIds() {
+  events.forEach(e => { if (!e._id) e._id = nextId++; });
+}
+
+function findById(id) {
+  return events.findIndex(e => e._id === id);
+}
+
+// Import
+document.getElementById('fileInput').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      let text = ev.target.result;
+      const start = text.indexOf('[');
+      const end = text.lastIndexOf(']') + 1;
+      events = JSON.parse(text.substring(start, end));
+      events.sort((a, b) => a.date.localeCompare(b.date));
+      assignIds();
+      document.getElementById('importArea').style.display = 'none';
+      render();
+    } catch(err) {
+      alert('Fehler beim Laden: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+});
+
+// Drag & drop
+const importArea = document.getElementById('importArea');
+importArea.addEventListener('dragover', e => { e.preventDefault(); importArea.style.borderColor = '#8b1a1a'; });
+importArea.addEventListener('dragleave', () => { importArea.style.borderColor = '#e0d8ce'; });
+importArea.addEventListener('drop', e => {
+  e.preventDefault();
+  importArea.style.borderColor = '#e0d8ce';
+  const file = e.dataTransfer.files[0];
+  if (file) {
+    const input = document.getElementById('fileInput');
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    input.files = dt.files;
+    input.dispatchEvent(new Event('change'));
+  }
+});
+
+function render() {
+  const yearFilter = document.getElementById('filterYear').value;
+  const typeFilter = document.getElementById('filterType').value;
+  
+  let filtered = events.filter(e => {
+    const year = e.date.substring(0, 4);
+    if (yearFilter !== 'all' && year !== yearFilter) return false;
+    if (typeFilter !== 'all' && e.type !== typeFilter) return false;
+    return true;
+  });
+
+  filtered.sort((a, b) => a.date.localeCompare(b.date));
+
+  const list = document.getElementById('eventList');
+  document.getElementById('count').textContent = filtered.length + ' von ' + events.length + ' Terminen';
+
+  if (filtered.length === 0) {
+    list.innerHTML = '<div class="empty">Keine Termine gefunden</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(e => {
+    const d = new Date(e.date);
+    const dateStr = d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const timeStr = e.date.includes('T') ? e.date.split('T')[1] : '';
+    const timeDisplay = timeStr && timeStr !== '00:00' ? ' · ' + timeStr : '';
+    
+    return '<div class="event-item" data-id="' + e._id + '">' +
+      '<div class="event-date">' + dateStr + timeDisplay + '</div>' +
+      '<div><div class="event-title">' + esc(e.title) + '</div>' +
+      (e.location ? '<div class="event-location">' + esc(e.location) + (e.notes ? ' · ' + esc(e.notes) : '') + '</div>' : '') +
+      '</div>' +
+      '<span class="event-type" data-type="' + e.type + '">' + e.type + '</span>' +
+      '<div class="event-actions">' +
+      '<button title="Bearbeiten" onclick="openEdit(' + e._id + ')">✏️</button>' +
+      '<button title="Löschen" onclick="confirmDelete(' + e._id + ')">🗑️</button>' +
+      '</div>' +
+      '</div>';
+  }).join('');
+}
+
+function esc(s) { 
+  const d = document.createElement('div'); 
+  d.textContent = s || ''; 
+  return d.innerHTML; 
+}
+
+function openAdd() {
+  editId = null;
+  document.getElementById('modalTitle').textContent = 'Neuer Termin';
+  document.getElementById('fTitle').value = '';
+  document.getElementById('fDate').value = '';
+  document.getElementById('fTime').value = '00:00';
+  document.getElementById('fType').value = 'auftritt';
+  document.getElementById('fLocation').value = '';
+  document.getElementById('fNotes').value = '';
+  document.getElementById('deleteBtn').style.display = 'none';
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function openEdit(id) {
+  const index = findById(id);
+  if (index < 0) return;
+  editId = id;
+  const e = events[index];
+  document.getElementById('modalTitle').textContent = 'Termin bearbeiten';
+  document.getElementById('fTitle').value = e.title || '';
+  document.getElementById('fDate').value = e.date ? e.date.split('T')[0] : '';
+  document.getElementById('fTime').value = e.date && e.date.includes('T') ? e.date.split('T')[1] : '00:00';
+  document.getElementById('fType').value = e.type || 'auftritt';
+  document.getElementById('fLocation').value = e.location || '';
+  document.getElementById('fNotes').value = e.notes || '';
+  document.getElementById('deleteBtn').style.display = 'inline-flex';
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
+
+function saveEvent() {
+  const title = document.getElementById('fTitle').value.trim();
+  const date = document.getElementById('fDate').value;
+  const time = document.getElementById('fTime').value || '00:00';
+  const type = document.getElementById('fType').value;
+  const location = document.getElementById('fLocation').value.trim();
+  const notes = document.getElementById('fNotes').value.trim();
+
+  if (!title || !date) {
+    alert('Titel und Datum sind Pflichtfelder.');
+    return;
+  }
+
+  const year = date.substring(0, 4);
+  const entry = { title, date: date + 'T' + time, year, type, location, notes };
+
+  if (editId !== null) {
+    const index = findById(editId);
+    if (index >= 0) {
+      entry._id = editId;
+      events[index] = entry;
+    }
+  } else {
+    entry._id = nextId++;
+    events.push(entry);
+  }
+
+  events.sort((a, b) => a.date.localeCompare(b.date));
+  closeModal();
+  render();
+}
+
+function confirmDelete(id) {
+  const index = findById(id);
+  if (index < 0) return;
+  const item = document.querySelector('[data-id="' + id + '"]');
+  if (!item) { events.splice(index, 1); render(); return; }
+  
+  // Show inline confirmation
+  item.innerHTML = '<div style="display:flex;align-items:center;gap:12px;width:100%;">' +
+    '<span style="font-weight:600;color:#c62828;">„' + esc(events[index].title) + '" löschen?</span>' +
+    '<button class="btn btn-danger" onclick="doDelete(' + id + ')" style="padding:6px 14px;font-size:.8rem;">Ja, löschen</button>' +
+    '<button class="btn btn-secondary" onclick="render()" style="padding:6px 14px;font-size:.8rem;">Abbrechen</button>' +
+    '</div>';
+}
+
+function doDelete(id) {
+  const index = findById(id);
+  if (index >= 0) {
+    events.splice(index, 1);
+    render();
+  }
+}
+
+function deleteEvent() {
+  if (editId !== null) {
+    const index = findById(editId);
+    if (index >= 0) {
+      events.splice(index, 1);
+      closeModal();
+      render();
+    }
+  }
+}
+
+function exportFile() {
+  if (events.length === 0) {
+    alert('Keine Termine zum Exportieren.');
+    return;
+  }
+
+  events.sort((a, b) => a.date.localeCompare(b.date));
+
+  // Remove internal _id before export
+  const clean = events.map(e => {
+    const { _id, ...rest } = e;
+    return rest;
+  });
+
+  const header = '/* Mukasi – Termine dataset (offline-friendly)\n   This file is generated from termine.html (data-* attributes).\n   Used for: Startseite "Nächste Termine" etc.\n*/\nwindow.MUKASI_TERMINE = ';
+  const content = header + JSON.stringify(clean) + ';\n';
+  
+  const blob = new Blob([content], { type: 'text/javascript' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'termine.v26.js';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+</body>
 </html>

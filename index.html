@@ -16,7 +16,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
 <link href="assets/css/styles.modern.css?v4.2" rel="stylesheet"/>
-</meta></head>
+</meta>
+</head>
 <body class="home">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <header class="site-header" data-header="">
@@ -116,12 +117,12 @@
 </section>
 <style>
 /* --- Welcome + Eindrücke combined --- */
-.intro-band{background:var(--color-primary);color:#fff;padding:var(--space-2xl) 0}
-.intro-band h2{color:#fff;font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.intro-band{background:var(--color-primary);color:#fff;padding:var(--space-lg) 0}
+.intro-band h2{color:#fff;font-size:clamp(1.4rem,2.5vw,1.8rem);margin-bottom:var(--space-sm)}
 .intro-band .eyebrow{color:rgba(255,255,255,.7)}
-.intro-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-lg);margin-top:var(--space-xl);text-align:center}
+.intro-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-md);margin-top:var(--space-md);text-align:center}
 @media(max-width:640px){.intro-stats{grid-template-columns:repeat(2,1fr)}}
-.intro-stat-num{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1}
+.intro-stat-num{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;line-height:1}
 .intro-stat-label{font-size:.9rem;opacity:.8;margin-top:4px}
 
 .mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:var(--space-md);margin-top:var(--space-xl)}
@@ -212,4 +213,82 @@
 </div>
 </div>
 </section>
-
+<!-- NÄCHSTE TERMINE -->
+<section class="section section-alt page-tint">
+<div class="container">
+<div class="section-head">
+<h2>Nächste Termine</h2>
+<a class="link" href="termine.html">Alle anzeigen</a>
+</div>
+<div class="next-grid" data-next-events="">
+<div class="empty-state" style="padding:18px;">
+<strong>Nächste Termine werden geladen…</strong>
+<p class="muted small" style="margin:6px 0 0;">Falls hier nichts erscheint, sind momentan keine Termine vorhanden.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="section section-cta">
+<div class="container cta">
+<div>
+<h2>Du hast Fragen oder willst mitspielen?</h2>
+<p class="muted">
+            Schreib uns kurz – wir melden uns zeitnah.
+          </p>
+</div>
+<div class="actions">
+<a class="btn btn-primary" href="kontakt.html">Kontakt</a>
+</div>
+</div>
+</section>
+<script id="next-events-data" type="application/json">[{"title": "Kinderfasching Simmerberg", "date": "2026-02-01T13:13", "type": "verein", "location": "Simmerberg", "notes": ""}, {"title": "Generalversammlung", "date": "2026-03-06T19:30", "type": "verein", "location": "Krone (Simmerberg)", "notes": ""}, {"title": "Spieleabend", "date": "2026-04-25T19:00", "type": "verein", "location": "Krone (Simmerberg)", "notes": ""}]</script>
+</main>
+<footer class="site-footer-new">
+<div class="container">
+<div class="footer-top-new">
+<div class="footer-brand-new">
+<img src="assets/img/notenschluessel.png" alt="" class="footer-logo-new" aria-hidden="true"/>
+<div>
+<div class="footer-name-new">Musikkapelle Simmerberg</div>
+<div class="footer-tagline-new">Blasmusik für Jung & Alt seit Generationen</div>
+</div>
+</div>
+<div class="footer-nav-new">
+<div class="footer-col-new">
+<div class="footer-heading-new">Verein</div>
+<a href="ueber-uns.html">Über uns</a>
+<a href="register.html">Register</a>
+<a href="vorstandschaft.html">Vorstandschaft</a>
+<a href="ehrenmitglieder.html">Ehrenmitglieder</a>
+</div>
+<div class="footer-col-new">
+<div class="footer-heading-new">Aktuelles</div>
+<a href="termine.html">Termine 2026</a>
+<a href="jugend.html">Jugend</a>
+<a href="foerderverein.html">Förderverein</a>
+<a href="vergangenens.html">Vergangenes</a>
+</div>
+<div class="footer-col-new">
+<div class="footer-heading-new">Kontakt</div>
+<a href="mailto:mukasi@gmx.net">mukasi@gmx.net</a>
+<span class="footer-info-new">Proben: Freitag · 20:00 Uhr</span>
+<span class="footer-info-new">Simmerberg im Allgäu</span>
+<a href="kontakt.html" class="footer-cta-new">Schreib uns →</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom-new">
+<span>© <span data-year></span> Musikkapelle Simmerberg e.V.</span>
+<div class="footer-legal-new">
+<a href="impressum.html">Impressum</a>
+<span class="footer-dot">·</span>
+<a href="datenschutz.html">Datenschutz</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="assets/data/termine.v26.js"></script>
+<script defer="" src="assets/js/main.modern.js?v4.2"></script>
+</body>
+</html>

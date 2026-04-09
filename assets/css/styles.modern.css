@@ -655,3 +655,25 @@ body:not(.home)::after{content:'';position:fixed;top:50%;right:5%;transform:tran
   .flyer-event:nth-child(even) .flyer-event-img-inner{float:none;max-width:260px}
 }
 
+
+/* --- New Footer --- */
+.site-footer-new{background:#1a1a1a;color:#ccc;padding:var(--space-2xl) 0 0}
+.footer-top-new{display:grid;grid-template-columns:1fr 2fr;gap:var(--space-2xl);padding-bottom:var(--space-xl);border-bottom:1px solid rgba(255,255,255,.1)}
+@media(max-width:768px){.footer-top-new{grid-template-columns:1fr}}
+.footer-brand-new{display:flex;align-items:flex-start;gap:var(--space-md)}
+.footer-logo-new{height:52px;width:auto;opacity:.8;filter:brightness(10)}
+.footer-name-new{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:#fff}
+.footer-tagline-new{font-size:.85rem;color:rgba(255,255,255,.5);margin-top:2px}
+.footer-nav-new{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-xl)}
+@media(max-width:640px){.footer-nav-new{grid-template-columns:1fr}}
+.footer-col-new{display:flex;flex-direction:column;gap:6px}
+.footer-heading-new{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:var(--space-xs)}
+.footer-col-new a{color:#ccc;font-size:.9rem;text-decoration:none;transition:color .2s}
+.footer-col-new a:hover{color:#fff}
+.footer-info-new{font-size:.85rem;color:rgba(255,255,255,.45)}
+.footer-cta-new{display:inline-block;margin-top:var(--space-xs);color:var(--color-primary)!important;font-weight:600}
+.footer-cta-new:hover{color:#fff!important}
+.footer-bottom-new{display:flex;justify-content:space-between;align-items:center;padding:var(--space-md) 0;font-size:.8rem;color:rgba(255,255,255,.35);flex-wrap:wrap;gap:var(--space-sm)}
+.footer-legal-new a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+.footer-legal-new a:hover{color:#fff}
+.footer-dot{margin:0 .4em}
