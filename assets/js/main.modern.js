@@ -536,22 +536,77 @@
         return card;
       };
 
-      // Render upcoming
+      // Group by month and render
+      const renderMonthGroups = (events, isPast) => {
+        const months = {};
+        events.forEach(ev => {
+          const key = ev.dateObj.getFullYear() + '-' + String(ev.dateObj.getMonth()).padStart(2,'0');
+          if (!months[key]) months[key] = {year: ev.dateObj.getFullYear(), month: ev.dateObj.getMonth(), events: []};
+          months[key].events.push(ev);
+        });
+        
+        Object.values(months).forEach(group => {
+          const monthName = new Date(group.year, group.month).toLocaleString('de-DE', {month:'long'});
+          const mg = document.createElement('div');
+          mg.className = 'mg' + (isPast ? ' mg--past' : '');
+          
+          let eventsHtml = '';
+          group.events.forEach(event => {
+            const dayNum = event.dateObj.getDate();
+            const wd = event.dateObj.toLocaleString('de-DE', {weekday:'short'}).replace('.','');
+            const time = formatEventTime(event.dateObj);
+            const showTime = time !== '00:00';
+            const loc = event.locationText || '';
+            const notes = event.notesText || '';
+            const etype = event.eventType || 'verein';
+            const elabel = getEventTypeLabel(etype);
+            const bclass = etype === 'konzert' ? 'mg-b-k' : etype === 'verein' ? 'mg-b-v' : 'mg-b-a';
+            
+            eventsHtml += '<div class="mg-ev" data-event data-title="'+escapeHtml(event.titleText)+'" data-date="'+event.date+'" data-location="'+escapeHtml(loc)+'" data-type="'+etype+'" data-notes="'+escapeHtml(notes)+'" data-year="'+event.eventYear+'">' +
+              '<div class="mg-ev-d"><span class="mg-ev-day">'+dayNum+'</span><span class="mg-ev-wd">'+wd+'</span></div>' +
+              '<div class="mg-ev-i">' +
+                '<div class="mg-ev-name">'+escapeHtml(event.titleText)+'</div>' +
+                '<div class="mg-ev-sub">' +
+                  (showTime ? '<span class="mg-ev-meta">'+time+' Uhr</span>' : '') +
+                  (loc ? '<span class="mg-ev-meta">'+escapeHtml(loc)+'</span>' : '') +
+                  (notes ? '<span class="mg-ev-note">'+escapeHtml(notes)+'</span>' : '') +
+                '</div>' +
+              '</div>' +
+              '<span class="mg-badge '+bclass+'">'+elabel+'</span>' +
+            '</div>';
+          });
+          
+          mg.innerHTML = '<div class="mg-head">' +
+            '<span class="mg-month">'+monthName.charAt(0).toUpperCase()+monthName.slice(1)+'</span>' +
+            '<span class="mg-year">'+group.year+'</span>' +
+            '<span class="mg-count">'+group.events.length+' Termin'+(group.events.length > 1 ? 'e' : '')+'</span>' +
+          '</div>' +
+          '<div class="mg-list">'+eventsHtml+'</div>';
+          
+          // Add click handlers for event dialog
+          mg.querySelectorAll('.mg-ev').forEach(card => {
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', () => { openEventDialog(card); });
+          });
+          
+          eventList.appendChild(mg);
+        });
+      };
+      
       if (upcoming.length > 0) {
         const upLabel = document.createElement('div');
         upLabel.className = 'event-section-label';
         upLabel.innerHTML = '<span>Kommende Termine</span>';
         eventList.appendChild(upLabel);
-        upcoming.forEach((event, i) => eventList.appendChild(createCard(event, i, false)));
+        renderMonthGroups(upcoming, false);
       }
 
-      // Render past
       if (past.length > 0) {
         const pastLabel = document.createElement('div');
         pastLabel.className = 'event-section-label event-section-label--past';
         pastLabel.innerHTML = '<span>Vergangene Termine</span>';
         eventList.appendChild(pastLabel);
-        past.forEach((event, i) => eventList.appendChild(createCard(event, i, true)));
+        renderMonthGroups(past, true);
       }
 
       if (resultsCount) {
