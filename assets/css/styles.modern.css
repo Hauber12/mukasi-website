@@ -721,3 +721,62 @@ body:not(.home)::after{content:'';position:fixed;top:50%;right:5%;transform:tran
   .ev-row-title{font-size:.9rem}
   .ev-row-detail{font-size:.75rem}
 }
+
+/* Month groups */
+.mg{margin-bottom:var(--space-xl)}
+.mg--past{opacity:.55}
+.mg--past:hover{opacity:.75}
+.mg-head{display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-md) var(--space-lg);background:var(--color-primary);border-radius:var(--radius-lg) var(--radius-lg) 0 0;color:#fff}
+.mg-month{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700}
+.mg-year{font-size:.85rem;opacity:.7}
+.mg-count{margin-left:auto;font-size:.72rem;background:rgba(255,255,255,.2);padding:3px 12px;border-radius:999px}
+.mg-list{background:white;border:1px solid var(--color-border);border-top:none;border-radius:0 0 var(--radius-lg) var(--radius-lg);overflow:hidden}
+.mg-ev{display:grid;grid-template-columns:52px 1fr auto;gap:0 var(--space-md);align-items:center;padding:var(--space-md) var(--space-lg);border-bottom:1px solid var(--color-border);transition:background .15s;cursor:pointer}
+.mg-ev:last-child{border-bottom:none}
+.mg-ev:hover{background:rgba(139,26,26,.03)}
+.mg-ev-d{text-align:center;background:var(--color-bg-warm);border-radius:var(--radius-md);padding:6px 4px}
+.mg-ev-day{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--color-secondary);display:block;line-height:1}
+.mg-ev-wd{font-size:.65rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:2px;display:block}
+.mg-ev-i{min-width:0}
+.mg-ev-name{font-size:.95rem;font-weight:700;color:var(--color-secondary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mg-ev-sub{display:flex;gap:var(--space-sm);flex-wrap:wrap;margin-top:3px;font-size:.8rem;color:var(--color-text-light)}
+.mg-ev-meta::before{content:'·';margin-right:var(--space-xs);opacity:.4}
+.mg-ev-meta:first-child::before{display:none}
+.mg-ev-note{font-size:.72rem;font-weight:600;background:rgba(139,26,26,.07);color:var(--color-primary);padding:2px 8px;border-radius:999px}
+.mg-badge{font-size:.62rem;font-weight:700;padding:3px 10px;border-radius:999px;white-space:nowrap;letter-spacing:.04em;text-transform:uppercase}
+.mg-b-a{background:rgba(139,26,26,.08);color:var(--color-primary)}
+.mg-b-k{background:rgba(28,25,23,.07);color:var(--color-text)}
+.mg-b-v{background:rgba(154,114,9,.1);color:#9a7209}
+@media(max-width:640px){
+  .mg-ev{grid-template-columns:44px 1fr;gap:0 var(--space-sm);padding:var(--space-sm) var(--space-md)}
+  .mg-badge{display:none}
+  .mg-ev-day{font-size:1.1rem}
+  .mg-ev-name{font-size:.88rem}
+  .mg-head{padding:var(--space-sm) var(--space-md)}
+  .mg-month{font-size:1.05rem}
+}
+
+/* Termine toolbar */
+.termine-toolbar{display:flex;justify-content:space-between;align-items:center;padding:var(--space-md) 0;margin-bottom:var(--space-md);border-bottom:2px solid var(--color-primary)}
+.termine-legend{display:flex;gap:var(--space-lg);font-size:.82rem;color:var(--color-text-light)}
+.termine-leg-item{display:flex;align-items:center;gap:6px}
+.termine-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.termine-dot--auftritt{background:var(--color-primary)}
+.termine-dot--konzert{background:#2c2c2c}
+.termine-dot--verein{background:#9a7209}
+
+/* Next event highlight */
+.next-highlight{background:linear-gradient(135deg,var(--color-primary),#5a0f0f);border-radius:var(--radius-lg);padding:var(--space-xl);color:#fff;margin-bottom:var(--space-xl);display:flex;align-items:center;gap:var(--space-xl);position:relative;overflow:hidden}
+.next-highlight::after{content:'';position:absolute;right:-30px;top:-30px;width:180px;height:180px;background:url('../img/notenschluessel.png') center/contain no-repeat;opacity:.08;filter:invert(1);pointer-events:none}
+.nh-badge{background:rgba(255,255,255,.2);padding:var(--space-sm) var(--space-lg);border-radius:var(--radius-md);font-size:1.4rem;font-weight:700;font-family:'Playfair Display',serif;white-space:nowrap;text-align:center;min-width:100px;line-height:1.2}
+.nh-content{min-width:0}
+.nh-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;opacity:.7;margin-bottom:var(--space-xs)}
+.nh-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;margin:0 0 var(--space-xs);color:#fff}
+.nh-meta{display:flex;gap:var(--space-md);flex-wrap:wrap;font-size:.9rem;opacity:.8}
+.nh-meta span::before{content:'·';margin-right:var(--space-xs);opacity:.5}
+.nh-meta span:first-child::before{display:none}
+@media(max-width:640px){
+  .next-highlight{flex-direction:column;align-items:flex-start;padding:var(--space-lg);gap:var(--space-md)}
+  .nh-badge{min-width:auto;font-size:1.1rem;padding:var(--space-xs) var(--space-md)}
+  .nh-title{font-size:1.2rem}
+}

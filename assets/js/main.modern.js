@@ -593,6 +593,35 @@
         });
       };
       
+
+      // Next event highlight
+      const highlightEl = document.querySelector('[data-next-highlight]');
+      if (highlightEl && upcoming.length > 0) {
+        const next = upcoming[0];
+        const nDay = next.dateObj.getDate();
+        const nMonth = next.dateObj.toLocaleString('de-DE', {month:'long'});
+        const nYear = next.dateObj.getFullYear();
+        const nWd = next.dateObj.toLocaleString('de-DE', {weekday:'long'});
+        const nTime = formatEventTime(next.dateObj);
+        const nShowTime = nTime !== '00:00';
+        const nLoc = next.locationText || '';
+        const now = new Date();
+        const diffDays = Math.ceil((next.dateObj - now) / (1000*60*60*24));
+        const diffText = diffDays === 0 ? 'Heute!' : diffDays === 1 ? 'Morgen' : 'in ' + diffDays + ' Tagen';
+        
+        highlightEl.style.display = '';
+        highlightEl.innerHTML = '<div class="nh-badge">' + diffText + '</div>' +
+          '<div class="nh-content">' +
+            '<div class="nh-label">N\u00e4chster Termin</div>' +
+            '<h3 class="nh-title">' + escapeHtml(next.titleText) + '</h3>' +
+            '<div class="nh-meta">' +
+              '<span>' + nWd + ', ' + nDay + '. ' + nMonth + ' ' + nYear + '</span>' +
+              (nShowTime ? '<span>' + nTime + ' Uhr</span>' : '') +
+              (nLoc ? '<span>' + escapeHtml(nLoc) + '</span>' : '') +
+            '</div>' +
+          '</div>';
+      }
+
       if (upcoming.length > 0) {
         const upLabel = document.createElement('div');
         upLabel.className = 'event-section-label';
