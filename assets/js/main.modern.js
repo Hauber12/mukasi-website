@@ -245,15 +245,23 @@
         // Event type badge
         const typeBadge = event.type ? `<span class="event-type-badge event-type-${event.type}">${getEventTypeLabel(event.type)}</span>` : '';
 
+        const dayNum = event.dateObj.getDate();
+        const monthShort = event.dateObj.toLocaleString('de-DE', {month:'short'}).replace('.','');
+        const weekday = event.dateObj.toLocaleString('de-DE', {weekday:'short'}).replace('.','');
         card.innerHTML = `
-          <div class="event-date">${formattedDate}</div>
-          <h3 class="event-title">${escapeHtml(event.title)}</h3>
-          <div class="event-meta">
-            <span>⏰ ${formattedTime}</span>
-            ${event.location ? `<span>📍 ${escapeHtml(event.location)}</span>` : ''}
-            ${event.notes ? `<span style="font-size:.75rem;font-weight:600;background:rgba(139,26,26,.08);color:var(--color-primary);padding:2px 8px;border-radius:999px;">${escapeHtml(event.notes)}</span>` : ''}
+          <div class="ev-cal">
+            <span class="ev-cal-day">${dayNum}</span>
+            <span class="ev-cal-month">${monthShort}</span>
           </div>
-          ${typeBadge}
+          <div class="ev-body">
+            <div class="ev-weekdate">${weekday}, ${formattedDate}</div>
+            <h3 class="ev-title">${escapeHtml(event.title)}</h3>
+            <div class="ev-meta">
+              ${formattedTime !== '00:00' ? `<span>🕐 ${formattedTime} Uhr</span>` : ''}
+              ${event.location ? `<span>📍 ${escapeHtml(event.location)}</span>` : ''}
+            </div>
+            ${typeBadge}
+          </div>
         `;
 
         container.appendChild(card);
@@ -506,15 +514,24 @@
         const showTime = formattedTime !== '00:00';
         const typeBadge = event.eventType ? `<span class="event-type-badge event-type-${event.eventType}">${getEventTypeLabel(event.eventType)}</span>` : '';
 
+        const dayNum = event.dateObj.getDate();
+        const monthShort = event.dateObj.toLocaleString('de-DE', {month:'short'}).replace('.','');
+        const weekday = event.dateObj.toLocaleString('de-DE', {weekday:'short'}).replace('.','');
         card.innerHTML = `
-          <div class="event-date">${formattedDate}</div>
-          <h3 class="event-title">${escapeHtml(event.titleText)}</h3>
-          <div class="event-meta">
-            ${showTime ? `<span>⏰ ${formattedTime} Uhr</span>` : ''}
-            ${event.locationText ? `<span>📍 ${escapeHtml(event.locationText)}</span>` : ''}
-            ${event.notesText ? `<span style="font-size:.75rem;font-weight:600;background:rgba(139,26,26,.08);color:var(--color-primary);padding:2px 8px;border-radius:999px;">${escapeHtml(event.notesText)}</span>` : ''}
+          <div class="ev-cal ev-cal--${event.eventType || 'verein'}">
+            <span class="ev-cal-day">${dayNum}</span>
+            <span class="ev-cal-month">${monthShort}</span>
           </div>
-          ${typeBadge}
+          <div class="ev-body">
+            <div class="ev-weekdate">${weekday}, ${formattedDate}</div>
+            <h3 class="ev-title">${escapeHtml(event.titleText)}</h3>
+            <div class="ev-meta">
+              ${showTime ? `<span>🕐 ${formattedTime} Uhr</span>` : ''}
+              ${event.locationText ? `<span>📍 ${escapeHtml(event.locationText)}</span>` : ''}
+              ${event.notesText ? `<span class="ev-note">${escapeHtml(event.notesText)}</span>` : ''}
+            </div>
+            ${typeBadge}
+          </div>
         `;
 
         card.style.cursor = 'pointer';
