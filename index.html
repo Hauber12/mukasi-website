@@ -230,6 +230,99 @@
 </div>
 </div>
 </section>
+<!-- INSTAGRAM (2-Klick, DSGVO-konform) -->
+<style>
+.ig-section{padding:var(--space-2xl) 0;background:linear-gradient(180deg,#fff 0%,var(--color-primary-subtle) 100%)}
+.ig-section .section-head{margin-bottom:var(--space-lg);align-items:flex-end}
+.ig-section .section-head>div:first-child{flex:1}
+.ig-eyebrow{display:inline-flex;align-items:center;gap:.5rem;color:var(--color-primary);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;margin-bottom:var(--space-xs)}
+.ig-eyebrow svg{width:16px;height:16px}
+.ig-section h2{margin:0}
+
+.ig-consent{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-xl) var(--space-lg);text-align:center;max-width:640px;margin:0 auto;box-shadow:0 4px 24px rgba(0,0,0,.04)}
+.ig-consent-icon{width:64px;height:64px;margin:0 auto var(--space-md);background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(220,39,67,.25)}
+.ig-consent-icon svg{width:32px;height:32px;color:#fff}
+.ig-consent h3{margin-bottom:var(--space-sm);font-family:'Playfair Display',serif}
+.ig-consent p{color:var(--color-text-light);font-size:.95rem;line-height:1.6;max-width:480px;margin:0 auto var(--space-md)}
+.ig-consent p a{color:var(--color-primary);text-decoration:underline;text-underline-offset:3px}
+.ig-consent-buttons{display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-md)}
+.ig-btn-primary{background:var(--color-primary);color:#fff;padding:.75rem 1.7rem;border-radius:var(--radius-md);font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:all .2s;font-family:inherit}
+.ig-btn-primary:hover{background:var(--color-primary-dark);transform:translateY(-1px)}
+.ig-btn-secondary{background:transparent;color:var(--color-text);padding:.75rem 1.7rem;border-radius:var(--radius-md);font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid var(--color-border);transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
+.ig-btn-secondary:hover{border-color:var(--color-primary);color:var(--color-primary)}
+.ig-consent-remember{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--color-text-light);cursor:pointer;user-select:none}
+.ig-consent-remember input{cursor:pointer;accent-color:var(--color-primary)}
+
+.ig-posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-md);max-width:1100px;margin:0 auto;align-items:start}
+.ig-posts blockquote.instagram-media{margin:0!important;min-width:280px!important;width:100%!important;max-width:540px!important}
+
+.ig-cta{text-align:center;margin-top:var(--space-lg)}
+.ig-cta a{display:inline-flex;align-items:center;gap:.5rem;color:var(--color-primary);font-weight:600;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s;padding-bottom:2px}
+.ig-cta a:hover{border-bottom-color:var(--color-primary)}
+
+@media(max-width:640px){
+  .ig-consent{padding:var(--space-lg) var(--space-md)}
+  .ig-consent-buttons{flex-direction:column}
+  .ig-btn-primary,.ig-btn-secondary{width:100%;justify-content:center}
+  .ig-section .section-head{flex-direction:row;align-items:baseline}
+}
+</style>
+
+<section class="ig-section">
+<div class="container">
+<div class="section-head">
+<div>
+<div class="ig-eyebrow">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+Instagram
+</div>
+<h2>Auf Instagram folgen</h2>
+</div>
+<a class="link" href="https://www.instagram.com/musikkapelle_simmerberg/" target="_blank" rel="noopener">@musikkapelle_simmerberg</a>
+</div>
+
+<!-- Datenschutz-Hinweis (Standard, keine Verbindung zu Meta) -->
+<div class="ig-consent" data-ig-consent>
+<div class="ig-consent-icon">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+</div>
+<h3>Aktuelle Beiträge anzeigen?</h3>
+<p>Beim Laden werden Daten (u.&nbsp;a. deine IP-Adresse) an Instagram / Meta&nbsp;Platforms&nbsp;Inc. übertragen. Mehr Informationen findest du in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+<div class="ig-consent-buttons">
+<button type="button" class="ig-btn-primary" data-ig-load>Beiträge laden</button>
+<a class="ig-btn-secondary" href="https://www.instagram.com/musikkapelle_simmerberg/" target="_blank" rel="noopener">
+Direkt auf Instagram ansehen
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+</a>
+</div>
+<label class="ig-consent-remember">
+<input type="checkbox" data-ig-remember> Entscheidung für diesen Browser merken
+</label>
+</div>
+
+<!-- Beiträge nach Zustimmung -->
+<div class="ig-posts" data-ig-posts hidden>
+<!--
+  ANLEITUNG: Hier die URLs eurer 3-6 letzten Instagram-Beiträge eintragen.
+  So findest du den Link: Instagram-App -> Beitrag oeffnen -> "..." -> "Link kopieren".
+  Das funktioniert mit Posts (/p/) UND Reels (/reel/).
+  Pro Beitrag den blockquote-Block kopieren und data-instgrm-permalink anpassen.
+  Die Beitraege werden NUR geladen, nachdem der Nutzer die Zustimmung erteilt hat.
+-->
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/musikkapelle_simmerberg/" data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/musikkapelle_simmerberg/" data-instgrm-version="14"></blockquote>
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/musikkapelle_simmerberg/" data-instgrm-version="14"></blockquote>
+</div>
+
+<div class="ig-cta">
+<a href="https://www.instagram.com/musikkapelle_simmerberg/" target="_blank" rel="noopener">
+Profil auf Instagram öffnen
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+</a>
+</div>
+</div>
+</section>
+
 <!-- CTA -->
 <section class="cta-new">
 <div class="cta-new-bg"></div>
@@ -294,6 +387,48 @@
 </div>
 </footer>
 <script src="assets/data/termine.v26.js"></script>
+<script>
+/* Instagram 2-Klick-Consent (DSGVO) - laedt embed.js erst nach Zustimmung */
+(function(){
+  var consent  = document.querySelector('[data-ig-consent]');
+  var posts    = document.querySelector('[data-ig-posts]');
+  var loadBtn  = document.querySelector('[data-ig-load]');
+  var remember = document.querySelector('[data-ig-remember]');
+  if(!consent || !posts || !loadBtn) return;
+
+  var KEY = 'mukasi_ig_consent_v1';
+
+  function loadFeed(){
+    consent.hidden = true;
+    posts.hidden   = false;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.instagram.com/embed.js';
+    s.onload = function(){
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+      }
+    };
+    document.body.appendChild(s);
+  }
+
+  loadBtn.addEventListener('click', function(){
+    try {
+      if (remember && remember.checked) {
+        localStorage.setItem(KEY, 'granted');
+      }
+    } catch(e){}
+    loadFeed();
+  });
+
+  /* Auto-Load, wenn der Nutzer zuvor "merken" gewaehlt hat */
+  try {
+    if (localStorage.getItem(KEY) === 'granted') {
+      loadFeed();
+    }
+  } catch(e){}
+})();
+</script>
 <script defer="" src="assets/js/main.modern.js?v7.0"></script>
 </body>
 </html>
