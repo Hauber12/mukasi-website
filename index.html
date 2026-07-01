@@ -88,49 +88,51 @@
 
 
 <style>
-.hero-fullscreen{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:0}
-.hero-fullscreen::before{content:'';position:absolute;inset:0;background:url('assets/img/hero-gruppenfoto.jpg') center/cover no-repeat;z-index:0}
-.hero-fullscreen::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.55) 100%);z-index:1}
-.hero-fullscreen .hero-content{position:relative;z-index:2;max-width:800px;padding:var(--space-xl);animation:fadeInUp .8s var(--ease-out)}
-.hero-fullscreen .hero-overline{font-family:'Source Sans 3',sans-serif;font-size:.85rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:var(--space-sm)}
-.hero-fullscreen .hero-overline::before,.hero-fullscreen .hero-overline::after{content:'—';margin:0 .5em;opacity:.5}
-.hero-fullscreen h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6vw,4.5rem);color:#fff;line-height:1.1;margin-bottom:var(--space-md);text-shadow:0 2px 12px rgba(0,0,0,.3)}
-.hero-fullscreen .hero-sub{font-family:'Source Sans 3',sans-serif;font-size:clamp(1rem,1.8vw,1.25rem);color:rgba(255,255,255,.9);max-width:600px;margin:0 auto var(--space-xl);line-height:1.6}
-.hero-fullscreen .hero-buttons{display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap}
-.hero-fullscreen .btn-hero-primary{background:var(--color-primary);color:#fff;padding:.85rem 2rem;border-radius:var(--radius-md);font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s,transform .2s;border:2px solid var(--color-primary)}
-.hero-fullscreen .btn-hero-primary:hover{background:var(--color-primary-dark);transform:translateY(-1px)}
-.hero-fullscreen .btn-hero-secondary{background:transparent;color:#fff;padding:.85rem 2rem;border-radius:var(--radius-md);font-weight:600;font-size:1rem;text-decoration:none;transition:background .2s,transform .2s;border:2px solid rgba(255,255,255,.7)}
-.hero-fullscreen .btn-hero-secondary:hover{background:rgba(255,255,255,.15);transform:translateY(-1px)}
+/* HERO — editorial, links ausgerichtet, ruhiger Foto-Hintergrund */
+.hero-fullscreen{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;padding:0}
+.hero-fullscreen::before{content:'';position:absolute;inset:0;background:url('assets/img/hero-gruppenfoto.jpg') center/cover no-repeat;z-index:0;transform:scale(1.04)}
+.hero-fullscreen::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,16,15,.82) 0%,rgba(20,16,15,.55) 42%,rgba(20,16,15,.15) 100%),linear-gradient(0deg,rgba(20,16,15,.6) 0%,transparent 45%);z-index:1}
+.hero-fullscreen .hero-content{position:relative;z-index:2;max-width:var(--container-max);width:100%;margin:0 auto;padding:0 var(--space-lg) clamp(3rem,9vh,6rem);animation:fadeInUp .8s var(--ease-out)}
+.hero-fullscreen .hero-overline{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:var(--space-md);display:flex;align-items:center;gap:.75rem}
+.hero-fullscreen .hero-overline::before{content:'';width:32px;height:2px;background:var(--color-primary-light)}
+.hero-fullscreen h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6.5vw,4.6rem);font-weight:700;color:#fff;line-height:1.02;letter-spacing:-.02em;margin-bottom:var(--space-md);max-width:16ch}
+.hero-fullscreen h1 em{font-style:italic;color:#e8a0a0}
+.hero-fullscreen .hero-sub{font-family:'Source Sans 3',sans-serif;font-size:clamp(1.02rem,1.7vw,1.22rem);color:rgba(255,255,255,.9);max-width:56ch;margin:0 0 var(--space-xl);line-height:1.6}
+.hero-fullscreen .hero-buttons{display:flex;gap:var(--space-sm);flex-wrap:wrap}
+.hero-fullscreen .btn-hero-primary{background:var(--color-primary);color:#fff;padding:.9rem 2rem;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .25s var(--ease-out);border:1.5px solid var(--color-primary)}
+.hero-fullscreen .btn-hero-primary:hover{background:var(--color-primary-light);border-color:var(--color-primary-light);transform:translateY(-2px);box-shadow:0 10px 26px -8px rgba(139,26,26,.7)}
+.hero-fullscreen .btn-hero-secondary{background:rgba(255,255,255,.08);color:#fff;padding:.9rem 2rem;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .25s var(--ease-out);border:1.5px solid rgba(255,255,255,.55);backdrop-filter:blur(4px)}
+.hero-fullscreen .btn-hero-secondary:hover{background:rgba(255,255,255,.18);border-color:#fff;transform:translateY(-2px)}
 
-/* CTA Section */
-.cta-new{position:relative;padding:var(--space-2xl) 0;text-align:center;overflow:hidden;color:#fff}
-.cta-new-bg{position:absolute;inset:0;background:url('assets/img/mosaik-spielen.jpg') center/cover;z-index:0}
-.cta-new-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(139,26,26,.75) 0%,rgba(80,12,12,.85) 40%,rgba(20,10,10,.92) 100%)}
-.cta-new-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
-.cta-new h2{color:#fff;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:var(--space-md)}
-.cta-new p{color:rgba(255,255,255,.85);font-size:1.1rem;line-height:1.6;margin-bottom:var(--space-lg)}
-.cta-new-buttons{display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-xl)}
-.cta-new-info{display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap;font-size:.9rem;color:rgba(255,255,255,.7)}
-.cta-btn-main{display:inline-block;padding:1rem 2.4rem;background:#fff;color:#8b1a1a !important;border-radius:var(--radius-md);font-weight:700;font-size:1.05rem;text-decoration:none;transition:all .25s;border:2px solid #fff;box-shadow:0 4px 15px rgba(0,0,0,.2)}
-.cta-btn-main:hover{background:rgba(255,255,255,.92);transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
-.cta-btn-alt{display:inline-block;padding:1rem 2.4rem;background:transparent;color:#fff !important;border-radius:var(--radius-md);font-weight:600;font-size:1.05rem;text-decoration:none;transition:all .25s;border:2px solid rgba(255,255,255,.5)}
-.cta-btn-alt:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
+/* CTA — dunkler, ruhiger Block statt Foto-Overlay */
+.cta-new{position:relative;padding:var(--space-2xl) 0;text-align:center;overflow:hidden;color:#fff;background:var(--color-bg-dark)}
+.cta-new::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--color-primary)}
+.cta-new-bg{position:absolute;inset:0;background:url('assets/img/mosaik-spielen.jpg') center/cover;opacity:.16;z-index:0}
+.cta-new::after{content:'';position:absolute;right:-40px;bottom:-60px;width:210px;height:300px;background:url('assets/img/notenschluessel.png') no-repeat right bottom/contain;opacity:.12;z-index:0;pointer-events:none}
+.cta-new-inner{position:relative;z-index:1;max-width:620px;margin:0 auto}
+.cta-new h2{color:#fff;font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:var(--space-md)}
+.cta-new p{color:rgba(255,255,255,.82);font-size:1.1rem;line-height:1.6;margin-bottom:var(--space-lg)}
+.cta-new-buttons{display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-xl)}
+.cta-btn-main{display:inline-block;padding:.95rem 2.2rem;background:var(--color-primary);color:#fff !important;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .25s var(--ease-out);border:1.5px solid var(--color-primary)}
+.cta-btn-main:hover{background:var(--color-primary-light);border-color:var(--color-primary-light);transform:translateY(-2px)}
+.cta-btn-alt{display:inline-block;padding:.95rem 2.2rem;background:transparent;color:#fff !important;border-radius:999px;font-weight:700;font-size:1rem;text-decoration:none;transition:all .25s var(--ease-out);border:1.5px solid rgba(255,255,255,.4)}
+.cta-btn-alt:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px)}
+.cta-new-info{display:flex;gap:var(--space-lg);justify-content:center;flex-wrap:wrap;font-size:.9rem;color:rgba(255,255,255,.6)}
 @media(max-width:640px){.cta-new-info{flex-direction:column;gap:var(--space-sm)}}
 
 /* Mobile Hero */
 @media(max-width:640px){
-  .hero-fullscreen{min-height:85vh}
-  .hero-fullscreen h1{font-size:2rem}
-  .hero-fullscreen .hero-sub{font-size:.95rem}
-  .hero-fullscreen .hero-buttons{flex-direction:column;align-items:center}
-  .hero-fullscreen .btn-hero-primary,.hero-fullscreen .btn-hero-secondary{width:100%;max-width:280px;text-align:center}
-  .hero-fullscreen .hero-overline{font-size:.72rem;letter-spacing:.15em}
-  .intro-band{padding:var(--space-md) 0}
-  .intro-band h2{font-size:1.1rem;margin-bottom:var(--space-xs)}
-  .intro-stat-label{font-size:.75rem}
+  .hero-fullscreen{min-height:82vh}
+  .hero-fullscreen .hero-content{padding-left:var(--space-md);padding-right:var(--space-md)}
+  .hero-fullscreen h1{font-size:2.3rem}
+  .hero-fullscreen .hero-sub{font-size:.98rem}
+  .hero-fullscreen .hero-buttons{flex-direction:column;align-items:stretch}
+  .hero-fullscreen .btn-hero-primary,.hero-fullscreen .btn-hero-secondary{width:100%;text-align:center}
+  .hero-fullscreen .hero-overline{font-size:.7rem;letter-spacing:.16em}
+  .intro-band{padding:var(--space-lg) 0}
+  .intro-stat-label{font-size:.72rem}
   .section-head{flex-direction:row;align-items:baseline}
   .mosaic{gap:var(--space-sm)}
-  .mosaic-img{border-radius:var(--radius-md)}
   .next-grid{grid-template-columns:1fr!important}
 }
 </style>
@@ -139,7 +141,7 @@
 <section class="hero-fullscreen">
 <div class="hero-content">
 <p class="hero-overline">Musikkapelle Simmerberg e.V.</p>
-<h1>Blasmusik mit Herz &amp; Leidenschaft</h1>
+<h1>Blasmusik mit <em>Herz &amp; Leidenschaft</em></h1>
 <p class="hero-sub">Von traditionellen Märschen bis modernen Arrangements – wir sind rund 50 Musikantinnen und Musikanten, die mit Freude zusammen musizieren.</p>
 <div class="hero-buttons">
 <a class="btn-hero-primary" href="termine.html">Termine ansehen</a>
@@ -148,23 +150,25 @@
 </div>
 </section>
 <style>
-/* --- Welcome + Eindrücke combined --- */
-.intro-band{background:var(--color-primary);color:#fff;padding:var(--space-lg) 0}
-.intro-band h2{color:#fff;font-size:clamp(1.4rem,2.5vw,1.8rem);margin-bottom:var(--space-sm)}
+/* --- Zahlen-Band (roter Akzent) + Eindrücke --- */
+.intro-band{background:var(--color-primary);color:#fff;padding:var(--space-xl) 0;position:relative}
+.intro-band h2{color:#fff;font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.6vw,1.9rem);margin-bottom:var(--space-lg);text-align:center;letter-spacing:-.01em}
 .intro-band .eyebrow{color:rgba(255,255,255,.7)}
-.intro-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);margin-top:var(--space-md);text-align:center;max-width:700px;margin-left:auto;margin-right:auto}
-@media(max-width:640px){.intro-stats{grid-template-columns:repeat(3,1fr);gap:var(--space-sm)}}
-.intro-stat-num{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,2.2rem);font-weight:700;line-height:1}
-.intro-stat-label{font-size:.9rem;opacity:.8;margin-top:4px}
+.intro-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);margin:0 auto;text-align:center;max-width:760px}
+.intro-stats>div{position:relative}
+.intro-stats>div:not(:last-child)::after{content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);height:44px;width:1px;background:rgba(255,255,255,.25)}
+@media(max-width:640px){.intro-stats{gap:var(--space-sm)}.intro-stats>div:not(:last-child)::after{height:32px}}
+.intro-stat-num{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;line-height:1}
+.intro-stat-label{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;opacity:.82;margin-top:6px}
 
 .mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:var(--space-md);margin-top:var(--space-xl)}
 @media(max-width:768px){.mosaic{grid-template-columns:1fr}}
-.mosaic-img{border-radius:var(--radius-lg);overflow:hidden;position:relative}
-.mosaic-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.mosaic-img:hover img{transform:scale(1.03)}
+.mosaic-img{border-radius:var(--radius-lg);overflow:hidden;position:relative;box-shadow:var(--shadow-md)}
+.mosaic-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s var(--ease-out)}
+.mosaic-img:hover img{transform:scale(1.04)}
 .mosaic-img.tall{grid-row:1/3}
 @media(max-width:768px){.mosaic-img.tall{grid-row:auto}}
-.mosaic-caption{position:absolute;bottom:0;left:0;right:0;padding:var(--space-sm) var(--space-md);background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:.85rem;font-weight:600}
+.mosaic-caption{position:absolute;bottom:0;left:0;right:0;padding:var(--space-md);background:linear-gradient(transparent,rgba(20,16,15,.72));color:#fff;font-size:.9rem;font-weight:600;letter-spacing:.01em}
 
 
 </style>
@@ -192,7 +196,7 @@
 </section>
 
 <!-- BILDER-MOSAIK + FEATURES -->
-<section class="section">
+<section class="section has-clef clef-left">
 <div class="container">
 <div class="section-head">
 <h2>Eindrücke</h2>
@@ -230,96 +234,38 @@
 </div>
 </div>
 </section>
-<!-- INSTAGRAM (2-Klick, DSGVO-konform) -->
+<!-- INSTAGRAM — nur Verlinkung, kein Embed / kein Meta-Datentransfer -->
 <style>
-.ig-section{padding:var(--space-2xl) 0;background:linear-gradient(180deg,#fff 0%,var(--color-primary-subtle) 100%)}
-.ig-section .section-head{margin-bottom:var(--space-lg);align-items:flex-end}
-.ig-section .section-head>div:first-child{flex:1}
-.ig-eyebrow{display:inline-flex;align-items:center;gap:.5rem;color:var(--color-primary);font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.14em;margin-bottom:var(--space-xs)}
-.ig-eyebrow svg{width:16px;height:16px}
-.ig-section h2{margin:0}
-
-.ig-consent{background:#fff;border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-xl) var(--space-lg);text-align:center;max-width:640px;margin:0 auto;box-shadow:0 4px 24px rgba(0,0,0,.04)}
-.ig-consent-icon{width:64px;height:64px;margin:0 auto var(--space-md);background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);border-radius:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(220,39,67,.25)}
-.ig-consent-icon svg{width:32px;height:32px;color:#fff}
-.ig-consent h3{margin-bottom:var(--space-sm);font-family:'Playfair Display',serif}
-.ig-consent p{color:var(--color-text-light);font-size:.95rem;line-height:1.6;max-width:480px;margin:0 auto var(--space-md)}
-.ig-consent p a{color:var(--color-primary);text-decoration:underline;text-underline-offset:3px}
-.ig-consent-buttons{display:flex;gap:var(--space-sm);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-md)}
-.ig-btn-primary{background:var(--color-primary);color:#fff;padding:.75rem 1.7rem;border-radius:var(--radius-md);font-weight:600;font-size:.95rem;border:none;cursor:pointer;transition:all .2s;font-family:inherit}
-.ig-btn-primary:hover{background:var(--color-primary-dark);transform:translateY(-1px)}
-.ig-btn-secondary{background:transparent;color:var(--color-text);padding:.75rem 1.7rem;border-radius:var(--radius-md);font-weight:600;font-size:.95rem;text-decoration:none;border:1.5px solid var(--color-border);transition:all .2s;display:inline-flex;align-items:center;gap:.4rem}
-.ig-btn-secondary:hover{border-color:var(--color-primary);color:var(--color-primary)}
-.ig-consent-remember{display:inline-flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--color-text-light);cursor:pointer;user-select:none}
-.ig-consent-remember input{cursor:pointer;accent-color:var(--color-primary)}
-
-.ig-posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-md);max-width:1100px;margin:0 auto;align-items:start}
-.ig-posts blockquote.instagram-media{margin:0!important;min-width:280px!important;width:100%!important;max-width:540px!important}
-
-.ig-cta{text-align:center;margin-top:var(--space-lg)}
-.ig-cta a{display:inline-flex;align-items:center;gap:.5rem;color:var(--color-primary);font-weight:600;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s;padding-bottom:2px}
-.ig-cta a:hover{border-bottom-color:var(--color-primary)}
-
+.ig-link-band{padding:var(--space-2xl) 0;background:var(--color-bg-alt)}
+.ig-link-card{display:flex;align-items:center;gap:var(--space-lg);max-width:820px;margin:0 auto;background:var(--color-ivory);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-lg) var(--space-xl);box-shadow:var(--shadow-card);transition:transform .3s var(--ease-out),box-shadow .3s var(--ease-out)}
+.ig-link-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-card-hover)}
+.ig-link-icon{width:60px;height:60px;flex-shrink:0;border-radius:16px;background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);display:flex;align-items:center;justify-content:center}
+.ig-link-icon svg{width:30px;height:30px;color:#fff}
+.ig-link-text{flex:1;min-width:0}
+.ig-link-text .eyebrow{margin-bottom:var(--space-2xs)}
+.ig-link-text h2{margin:0 0 .2rem;font-size:clamp(1.3rem,2.4vw,1.7rem)}
+.ig-link-text p{margin:0;color:var(--color-text-light);font-size:.95rem}
+.ig-link-btn{flex-shrink:0}
 @media(max-width:640px){
-  .ig-consent{padding:var(--space-lg) var(--space-md)}
-  .ig-consent-buttons{flex-direction:column}
-  .ig-btn-primary,.ig-btn-secondary{width:100%;justify-content:center}
-  .ig-section .section-head{flex-direction:row;align-items:baseline}
+  .ig-link-card{flex-direction:column;text-align:center;padding:var(--space-lg)}
+  .ig-link-text .eyebrow{justify-content:center}
+  .ig-link-btn{width:100%}
 }
 </style>
 
-<section class="ig-section">
+<section class="ig-link-band">
 <div class="container">
-<div class="section-head">
-<div>
-<div class="ig-eyebrow">
+<a class="ig-link-card" href="https://www.instagram.com/musikkapelle_simmerberg/" target="_blank" rel="noopener">
+<span class="ig-link-icon" aria-hidden="true">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-Instagram
-</div>
-<h2>Auf Instagram folgen</h2>
-</div>
-<a class="link" href="https://www.instagram.com/musikkapelle_simmerberg/" target="_blank" rel="noopener">@musikkapelle_simmerberg</a>
-</div>
-
-<!-- Datenschutz-Hinweis (Standard, keine Verbindung zu Meta) -->
-<div class="ig-consent" data-ig-consent>
-<div class="ig-consent-icon">
-<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-</div>
-<h3>Aktuelle Beiträge anzeigen?</h3>
-<p>Beim Laden werden Daten (u.&nbsp;a. deine IP-Adresse) an Instagram / Meta&nbsp;Platforms&nbsp;Inc. übertragen. Mehr Informationen findest du in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-<div class="ig-consent-buttons">
-<button type="button" class="ig-btn-primary" data-ig-load>Beiträge laden</button>
-<a class="ig-btn-secondary" href="https://www.instagram.com/musikkapelle_simmerberg/" target="_blank" rel="noopener">
-Direkt auf Instagram ansehen
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+</span>
+<span class="ig-link-text">
+<span class="eyebrow">Instagram</span>
+<h2>Folge uns @musikkapelle_simmerberg</h2>
+<p>Fotos, Reels und Neuigkeiten – direkt auf unserem Profil.</p>
+</span>
+<span class="btn btn-primary ig-link-btn">Profil öffnen →</span>
 </a>
-</div>
-<label class="ig-consent-remember">
-<input type="checkbox" data-ig-remember> Entscheidung für diesen Browser merken
-</label>
-</div>
-
-<!-- Beiträge nach Zustimmung -->
-<div class="ig-posts" data-ig-posts hidden>
-<!--
-  ANLEITUNG: Hier die URLs eurer 3-6 letzten Instagram-Beiträge eintragen.
-  So findest du den Link: Instagram-App -> Beitrag oeffnen -> "..." -> "Link kopieren".
-  Das funktioniert mit Posts (/p/) UND Reels (/reel/).
-  Pro Beitrag den blockquote-Block kopieren und data-instgrm-permalink anpassen.
-  Die Beitraege werden NUR geladen, nachdem der Nutzer die Zustimmung erteilt hat.
--->
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/musikkapelle_simmerberg/" data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/musikkapelle_simmerberg/" data-instgrm-version="14"></blockquote>
-<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/musikkapelle_simmerberg/" data-instgrm-version="14"></blockquote>
-</div>
-
-<div class="ig-cta">
-<a href="https://www.instagram.com/musikkapelle_simmerberg/" target="_blank" rel="noopener">
-Profil auf Instagram öffnen
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-</a>
-</div>
 </div>
 </section>
 
@@ -387,48 +333,6 @@ Profil auf Instagram öffnen
 </div>
 </footer>
 <script src="assets/data/termine.v26.js"></script>
-<script>
-/* Instagram 2-Klick-Consent (DSGVO) - laedt embed.js erst nach Zustimmung */
-(function(){
-  var consent  = document.querySelector('[data-ig-consent]');
-  var posts    = document.querySelector('[data-ig-posts]');
-  var loadBtn  = document.querySelector('[data-ig-load]');
-  var remember = document.querySelector('[data-ig-remember]');
-  if(!consent || !posts || !loadBtn) return;
-
-  var KEY = 'mukasi_ig_consent_v1';
-
-  function loadFeed(){
-    consent.hidden = true;
-    posts.hidden   = false;
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.instagram.com/embed.js';
-    s.onload = function(){
-      if (window.instgrm && window.instgrm.Embeds) {
-        window.instgrm.Embeds.process();
-      }
-    };
-    document.body.appendChild(s);
-  }
-
-  loadBtn.addEventListener('click', function(){
-    try {
-      if (remember && remember.checked) {
-        localStorage.setItem(KEY, 'granted');
-      }
-    } catch(e){}
-    loadFeed();
-  });
-
-  /* Auto-Load, wenn der Nutzer zuvor "merken" gewaehlt hat */
-  try {
-    if (localStorage.getItem(KEY) === 'granted') {
-      loadFeed();
-    }
-  } catch(e){}
-})();
-</script>
 <script defer="" src="assets/js/main.modern.js?v7.0"></script>
 </body>
 </html>
